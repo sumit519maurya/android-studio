@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@drawable/blackwhite"
+    android:background="@drawable/color"
     android:layout_height="match_parent"
     tools:context=".login">
 
@@ -25,7 +25,7 @@
             android:layout_width="120sp"
             android:layout_height="120sp"
             android:src="@drawable/logo2"
-            app:civ_border_color="#4F20C2"
+            app:civ_border_color="#ECEAF1"
             android:elevation="4dp"
             app:civ_border_width="2dp"
             app:civ_border_overlay="true"
@@ -47,6 +47,8 @@
         android:layout_height="wrap_content"
         android:id="@+id/cardview"
         app:cardCornerRadius="50dp"
+        app:cardElevation="40dp"
+
         android:layout_marginBottom="-35dp"
         android:layout_alignParentBottom="true"
         >
@@ -71,6 +73,7 @@
 
             <View
                 android:layout_width="wrap_content"
+                android:elevation="4dp"
                 android:layout_height="20dp"/>
 
             <TextView
@@ -83,11 +86,12 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:drawableEnd="@drawable/baseline_account_circle_24"
+                android:drawableStart="@drawable/baseline_account_circle_24"
                 android:inputType="textPersonName"/>
             <View
                 android:layout_width="wrap_content"
-                android:layout_height="20dp"/>
+                android:layout_height="20dp"
+                android:elevation="4dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -99,7 +103,7 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:drawableEnd="@drawable/baseline_remove_red_eye_24"
+                android:drawableStart="@drawable/baseline_remove_red_eye_24"
                 android:inputType="textPassword"/>
 
             <RelativeLayout
@@ -123,6 +127,7 @@
             </RelativeLayout>
             <View
                 android:layout_width="wrap_content"
+                android:elevation="4dp"
                 android:layout_height="20dp"/>
 
             <com.google.android.material.button.MaterialButton
@@ -130,10 +135,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:text="LOGIN"
+                android:textSize="20dp"
                 app:cornerRadius="32dp"/>
 
             <View
                 android:layout_width="wrap_content"
+                android:elevation="40dp"
                 android:layout_height="10dp"/>
 
             <TextView
@@ -147,6 +154,7 @@
 
             <View
                 android:layout_width="wrap_content"
+                android:elevation="4dp"
                 android:layout_height="20dp"/>
 
         </LinearLayout>

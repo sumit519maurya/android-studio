@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/PURPUL2"
+    android:background="@drawable/color"
     tools:context=".signin">
 
     <RelativeLayout
@@ -18,8 +18,8 @@
         android:layout_width="match_parent"
         android:layout_height="334dp"
         android:layout_above="@id/cardview"
-        android:background="@drawable/cvboarder"
         android:gravity="center"
+
         android:orientation="vertical"
         android:padding="30dp">
 
@@ -27,7 +27,7 @@
             android:layout_width="120sp"
             android:layout_height="120sp"
             android:src="@drawable/logo2"
-            app:civ_border_color="#4F20C2"
+            app:civ_border_color="#F4F4F6"
             android:elevation="4dp"
             app:civ_border_width="2dp"
             app:civ_border_overlay="true"
@@ -49,6 +49,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/cardview"
         app:cardCornerRadius="50dp"
+        app:cardElevation="40dp"
         android:layout_marginBottom="-35dp"
         android:layout_alignParentBottom="true"
         >
@@ -56,6 +57,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
+            android:background="@drawable/cvboarder"
             android:padding="30dp">
 
             <TextView
@@ -77,7 +79,7 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:drawableEnd="@drawable/baseline_account_circle_24"
+                android:drawableStart="@drawable/baseline_account_circle_24"
                 android:inputType="textPersonName"/>
 
 
@@ -94,7 +96,7 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:drawableEnd="@drawable/baseline_email_24"
+                android:drawableStart="@drawable/baseline_email_24"
                 android:inputType="textEmailAddress"/>
             <View
                 android:layout_width="wrap_content"
@@ -110,7 +112,7 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:drawableEnd="@drawable/baseline_call_24"
+                android:drawableStart="@drawable/baseline_call_24"
                 android:inputType="number"/>
             <View
                 android:layout_width="wrap_content"
@@ -126,7 +128,7 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:drawableEnd="@drawable/baseline_remove_red_eye_24"
+                android:drawableStart="@drawable/baseline_remove_red_eye_24"
                 android:inputType="textPassword"/>
 
 
@@ -139,6 +141,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:text="SIGN-IN"
+                android:textSize="20dp"
                 app:cornerRadius="32dp"/>
 
             <View
