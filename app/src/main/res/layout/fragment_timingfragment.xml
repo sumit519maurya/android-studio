@@ -51,7 +51,7 @@
         android:textStyle="bold|italic"
         android:textSize="40dp"
         android:fontFamily="serif"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:gravity="center"
         android:shadowColor="#0F1B1B"
         android:shadowDx="5"
