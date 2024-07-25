@@ -17,13 +17,11 @@ import com.google.android.material.navigation.NavigationView
 
 class homepage : AppCompatActivity() {
     private lateinit var toggle: ActionBarDrawerToggle
-    private lateinit var drawerLayout:DrawerLayout
-    private lateinit var navigation:NavigationView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_homepage)
-        val booknowimgae:ImageView=findViewById(R.id.booknowimage)
+       val booknowimgae:ImageView=findViewById(R.id.booknowimage)
         val drawerLayout: DrawerLayout = findViewById(R.id.main)
         val navigation: NavigationView = findViewById(R.id.navigation)
         val tolbar: Toolbar = findViewById(R.id.toolbar)
@@ -37,7 +35,6 @@ class homepage : AppCompatActivity() {
         )
         drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
        navigation.setNavigationItemSelectedListener { item ->
             val id = item.itemId
             if (id == R.id.home) {
@@ -53,7 +50,7 @@ class homepage : AppCompatActivity() {
             drawerLayout.closeDrawer(GravityCompat.START)
             true
         }
-        booknowimgae.setOnClickListener {
+       booknowimgae.setOnClickListener {
             val i=Intent(this,bookoption::class.java)
             startActivity(i)
         }

@@ -1,13 +1,16 @@
 package com.example.washmart
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import androidx.core.view.GravityCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.drawerlayout.widget.DrawerLayout
+import com.google.android.material.navigation.NavigationView
 
 class bookoption : AppCompatActivity() {
     private lateinit var toggle: ActionBarDrawerToggle
@@ -16,7 +19,7 @@ class bookoption : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_bookoption)
         val drawerLayout: DrawerLayout = findViewById(R.id.main)
-        //val navigation: NavigationView = findViewById(R.id.navigation)
+        val navigation: NavigationView = findViewById(R.id.navigation)
         val tolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(tolbar)
         toggle = ActionBarDrawerToggle(
@@ -28,9 +31,10 @@ class bookoption : AppCompatActivity() {
         )
         drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
-        /* navigation.setNavigationItemSelectedListener { item ->
+         navigation.setNavigationItemSelectedListener { item ->
              val id = item.itemId
              if (id == R.id.home) {
+                 Toast.makeText(this, "sdsfsf", Toast.LENGTH_LONG).show()
 
              } else if (id == R.id.profile) {
              }
@@ -42,6 +46,6 @@ class bookoption : AppCompatActivity() {
              }
              drawerLayout.closeDrawer(GravityCompat.START)
              true
-         }*/
+         }
     }
 }

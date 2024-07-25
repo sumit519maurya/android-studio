@@ -6,30 +6,32 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/color2"
-    android:elevation="5dp"
     tools:context=".homepage"
     android:fitsSystemWindows="true"
-    tools:openDrawer="start">
+    >
 
+    <include
+        layout="@layout/appbarmain"
+        android:layout_width="64dp"
+        android:layout_height="66dp"
+        app:layout_constraintBottom_toBottomOf="@+id/navigation"
+        app:layout_constraintEnd_toEndOf="@+id/navigation" />
 
-    <include layout="@layout/appbarmain"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
-    
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/navigation"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
+        android:layout_width="358dp"
+        android:layout_height="723dp"
         android:layout_gravity="start"
+        android:background="@color/white"
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/header"
-        android:background="@color/white"
-        app:itemIconTint="@color/black"
         app:itemIconSize="30dp"
+        app:itemIconTint="@color/black"
         app:itemTextColor="@color/purpul"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:menu="@menu/menunew" />
+
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -48,7 +50,7 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.446">
+            app:layout_constraintVertical_bias="0.445">
 
             <androidx.cardview.widget.CardView
                 android:layout_width="185dp"
