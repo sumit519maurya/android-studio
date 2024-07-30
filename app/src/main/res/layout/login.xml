@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@drawable/color"
+    android:background="@drawable/color2"
     android:layout_height="match_parent"
     tools:context=".login">
 
@@ -37,7 +37,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="cursive"
             android:text="Wash Mart"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textSize="40sp"
             android:textStyle="bold" />
     </LinearLayout>
@@ -56,6 +56,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
+            android:background="@drawable/cvboarder"
             android:padding="30dp">
 
             <TextView

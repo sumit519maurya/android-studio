@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/color"
+    android:background="@drawable/color2"
     tools:context=".signin">
 
     <RelativeLayout
@@ -39,7 +39,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="serif-monospace"
             android:text="Sign-up"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textSize="40sp"
             android:textStyle="bold" />
     </LinearLayout>

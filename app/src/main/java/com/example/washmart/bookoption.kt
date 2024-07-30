@@ -1,6 +1,10 @@
 package com.example.washmart
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.ArrayAdapter
+import android.widget.Button
+import android.widget.Spinner
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.ActionBarDrawerToggle
@@ -18,6 +22,8 @@ class bookoption : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_bookoption)
+        val back:Button=findViewById(R.id.backbtn)
+        val next:Button=findViewById(R.id.nextbtn)
         val drawerLayout: DrawerLayout = findViewById(R.id.main)
         val navigation: NavigationView = findViewById(R.id.navigation)
         val tolbar: Toolbar = findViewById(R.id.toolbar)
@@ -47,5 +53,13 @@ class bookoption : AppCompatActivity() {
              drawerLayout.closeDrawer(GravityCompat.START)
              true
          }
+       back.setOnClickListener {
+           val i= Intent(this,homepage::class.java)
+           startActivity(i)
+       }
+        next.setOnClickListener {
+            val i= Intent(this,orderpage2::class.java)
+            startActivity(i)
+        }
     }
 }
