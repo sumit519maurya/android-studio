@@ -143,11 +143,11 @@
             app:layout_constraintVertical_bias="0.661" />
 
         <CheckBox
-            android:id="@+id/Pants"
+            android:id="@+id/pants"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/caudex"
-            android:text="Laundry"
+            android:text="Paint"
             android:textSize="17dp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -173,11 +173,11 @@
             app:layout_constraintVertical_bias="0.661" />
 
         <CheckBox
-            android:id="@+id/shadi"
+            android:id="@+id/shorts"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/caudex"
-            android:text="Shadi"
+            android:text="Shorts"
             android:textSize="17dp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"

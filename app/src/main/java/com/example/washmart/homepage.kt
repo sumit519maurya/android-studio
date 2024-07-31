@@ -24,6 +24,10 @@ class homepage : AppCompatActivity() {
         setContentView(R.layout.activity_homepage)
        val booknowimgae:ImageView=findViewById(R.id.booknowimage)
         val booknowtext:TextView=findViewById(R.id.booknowtext)
+
+        val infoimg:ImageView=findViewById(R.id.infoimg)
+        val aboutus:TextView=findViewById(R.id.aboutus)
+
         val drawerLayout: DrawerLayout = findViewById(R.id.main)
         val navigation: NavigationView = findViewById(R.id.navigation)
         val tolbar: Toolbar = findViewById(R.id.toolbar)
@@ -58,6 +62,14 @@ class homepage : AppCompatActivity() {
         }
         booknowtext.setOnClickListener {
             val i=Intent(this,bookoption::class.java)
+            startActivity(i)
+        }
+        infoimg.setOnClickListener {
+            val i=Intent(this,infopage::class.java)
+            startActivity(i)
+        }
+        aboutus.setOnClickListener {
+            val i=Intent(this,infopage::class.java)
             startActivity(i)
         }
 
