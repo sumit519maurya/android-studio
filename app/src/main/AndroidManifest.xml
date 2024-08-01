@@ -13,17 +13,17 @@
         android:theme="@style/Theme.Washmart"
         tools:targetApi="31">
         <activity
-            android:name=".infosavepage"
-            android:exported="false" />
+            android:name=".orderpage2"
+            android:exported="true">
+        </activity>
         <activity
             android:name=".infopage"
-            android:exported="false" />
+            android:exported="true">
+        </activity>
         <activity
-            android:name=".informationpage"
-            android:exported="false" />
-        <activity
-            android:name=".orderpage2"
-            android:exported="true" />
+            android:name=".infosavepage"
+            android:exported="true">
+        </activity>
         <activity
             android:name=".bookoption"
             android:exported="true" />
@@ -32,7 +32,6 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
