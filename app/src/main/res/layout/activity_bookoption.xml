@@ -300,7 +300,7 @@
                 android:id="@+id/total"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Button"
+                android:text="TOTAL"
                 android:textSize="15dp"
                 android:textColor="@color/black"
                 android:background="@drawable/cvboarder"

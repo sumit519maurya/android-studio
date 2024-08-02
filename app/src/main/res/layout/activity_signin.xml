@@ -19,7 +19,6 @@
         android:layout_height="334dp"
         android:layout_above="@id/cardview"
         android:gravity="center"
-
         android:orientation="vertical"
         android:padding="30dp">
 
@@ -63,6 +62,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/caudex"
+                android:textStyle="bold"
                 android:text="Please login with your information"
                 android:alpha="0.7"/>
             <View
@@ -77,6 +78,7 @@
                 android:alpha="0.7"/>
 
             <EditText
+                android:id="@+id/namesi"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableStart="@drawable/baseline_account_circle_24"
@@ -94,6 +96,7 @@
                 android:alpha="0.7"/>
 
             <EditText
+                android:id="@+id/emailsi"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableStart="@drawable/baseline_email_24"
@@ -110,6 +113,7 @@
                 android:alpha="0.7"/>
 
             <EditText
+                android:id="@+id/phonesi"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableStart="@drawable/baseline_call_24"
@@ -126,6 +130,7 @@
                 android:alpha="0.7"/>
 
             <EditText
+                android:id="@+id/passsi"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableStart="@drawable/baseline_remove_red_eye_24"
@@ -140,7 +145,9 @@
                 android:id="@+id/signinbtn"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:text="SIGN-IN"
+                android:text="SIGN-UP"
+                android:textStyle="bold"
+                android:fontFamily="@font/caudex"
                 android:textSize="20dp"
                 app:cornerRadius="32dp"/>
 
@@ -152,6 +159,7 @@
                 android:id="@+id/signup"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/caudex"
                 android:textColor="@color/PURPUL2"
                 android:text="If already have an account then Login?"
                 android:textStyle="bold"
