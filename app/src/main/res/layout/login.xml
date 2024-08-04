@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@drawable/color2"
+    android:background="#0B2545"
     android:layout_height="match_parent"
     tools:context=".login">
 
@@ -37,7 +37,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="cursive"
             android:text="Wash Mart"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="40sp"
             android:textStyle="bold" />
     </LinearLayout>
@@ -46,7 +46,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/cardview"
-        app:cardCornerRadius="50dp"
+        app:cardCornerRadius="53dp"
         app:cardElevation="40dp"
 
         android:layout_marginBottom="-35dp"
@@ -64,7 +64,7 @@
                 android:layout_height="wrap_content"
                 android:text="Welcome"
                 android:fontFamily="@font/caudex"
-                android:textColor="@color/PURPUL2"
+                android:textColor="#0B2545"
                 android:textSize="32sp"
                 android:textStyle="bold"/>
             <TextView
@@ -139,15 +139,16 @@
                 android:elevation="4dp"
                 android:layout_height="20dp"/>
 
-            <com.google.android.material.button.MaterialButton
+            <Button
                 android:id="@+id/login"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:textStyle="bold"
                 android:fontFamily="@font/caudex"
                 android:text="LOGIN"
-                android:textSize="20dp"
-                app:cornerRadius="32dp"/>
+                android:textColor="@color/white"
+                android:backgroundTint="#0B2545"
+                android:textSize="20dp"/>
 
             <View
                 android:layout_width="wrap_content"

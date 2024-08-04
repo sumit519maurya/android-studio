@@ -12,7 +12,7 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#32A3A8"
+        android:background="#0B2545"
         app:titleTextColor="@color/white"
         app:titleMarginStart="100dp"
         android:theme="@style/CardView.Dark"

@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/color2"
+    android:background="#0B2545"
     tools:context=".infopage">
 
 
@@ -32,7 +32,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/caudex"
                 android:text="INFORMATION"
-                android:textColor="@color/PURPUL2"
+                android:textColor="#0B2545"
                 android:textSize="32sp"
                 android:textStyle="bold" />
 
@@ -40,6 +40,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:alpha="0.7"
+                android:textColor="#0B2545"
                 android:fontFamily="@font/caudex"
                 android:text="Please Enter  Your Information"
                 android:textStyle="bold" />
@@ -54,12 +55,13 @@
                 android:layout_height="wrap_content"
                 android:alpha="0.7"
                 android:text="User Name"
+                android:textColor="@color/black"
                 android:textStyle="bold" />
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:drawableEnd="@drawable/baseline_account_circle_24"
+                android:drawableStart="@drawable/baseline_account_circle_24"
                 android:inputType="textPersonName" />
 
             <View
@@ -72,12 +74,13 @@
                 android:layout_height="wrap_content"
                 android:alpha="0.7"
                 android:text="Phone Number"
+                android:textColor="@color/black"
                 android:textStyle="bold" />
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:drawableEnd="@drawable/baseline_call_24"
+                android:drawableStart="@drawable/baseline_call_24"
                 android:inputType="textPassword" />
 
             <View
@@ -90,12 +93,13 @@
                 android:layout_height="wrap_content"
                 android:alpha="0.7"
                 android:text="Your City Name"
+                android:textColor="@color/black"
                 android:textStyle="bold" />
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:drawableEnd="@drawable/baseline_add_location_24"
+                android:drawableStart="@drawable/baseline_add_location_24"
                 android:inputType="textPassword" />
 
             <View
@@ -108,12 +112,13 @@
                 android:layout_height="wrap_content"
                 android:alpha="0.7"
                 android:text="Your Address"
+                android:textColor="@color/black"
                 android:textStyle="bold" />
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:drawableEnd="@drawable/baseline_add_location_24"
+                android:drawableStart="@drawable/baseline_add_location_24"
                 android:inputType="textPassword" />
 
             <View
@@ -127,15 +132,16 @@
                 android:layout_height="10dp"
                 android:elevation="4dp" />
 
-            <com.google.android.material.button.MaterialButton
+            <Button
                 android:id="@+id/save"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:fontFamily="@font/caudex"
                 android:text="SAVE"
-                android:textSize="20dp"
-                android:textStyle="bold"
-                app:cornerRadius="32dp" />
+                android:textColor="@color/white"
+                android:backgroundTint="#0B2545"
+                android:textSize="25dp"
+                android:textStyle="bold" />
 
 
         </LinearLayout>
@@ -145,14 +151,14 @@
 
     <ImageView
         android:id="@+id/imageView5"
-        android:layout_width="434dp"
-        android:layout_height="209dp"
-        android:layout_marginTop="76dp"
+        android:layout_width="376dp"
+        android:layout_height="180dp"
+        android:layout_marginTop="80dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.521"
+        app:layout_constraintHorizontal_bias="0.542"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/infoimg1" />
+        app:srcCompat="@drawable/info" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

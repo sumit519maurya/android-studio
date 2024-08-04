@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="210dp"
     android:orientation="vertical"
-    android:background="@drawable/color"
+    android:background="#0B2545"
     android:gravity="bottom"
     android:padding="20dp">
 

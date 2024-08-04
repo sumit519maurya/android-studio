@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/color2"
+    android:background="#0B2545"
     tools:context=".signin">
 
     <RelativeLayout
@@ -38,7 +38,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="serif-monospace"
             android:text="Sign-up"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="40sp"
             android:textStyle="bold" />
     </LinearLayout>
@@ -141,15 +141,16 @@
                 android:layout_width="wrap_content"
                 android:layout_height="20dp"/>
 
-            <com.google.android.material.button.MaterialButton
+            <Button
                 android:id="@+id/signinbtn"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:text="SIGN-UP"
                 android:textStyle="bold"
+                android:textColor="@color/white"
                 android:fontFamily="@font/caudex"
                 android:textSize="20dp"
-                app:cornerRadius="32dp"/>
+                android:backgroundTint="#0B2545"/>
 
             <View
                 android:layout_width="wrap_content"

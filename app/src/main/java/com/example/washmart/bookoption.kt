@@ -24,6 +24,7 @@ class bookoption : AppCompatActivity() {
     private lateinit var tshirtqt: TextView
     private lateinit var pantqt: TextView
     private lateinit var shortqt: TextView
+    private lateinit var totalcloth: TextView
     private var count=0
     private var count2=0
     private var count3=0
@@ -32,18 +33,25 @@ class bookoption : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_bookoption)
+
         val back:Button=findViewById(R.id.backbtn)
         val next:Button=findViewById(R.id.nextbtn)
         val shirt:CheckBox=findViewById(R.id.shirt)
         val tshirt:CheckBox=findViewById(R.id.tshirt)
         val pants:CheckBox=findViewById(R.id.pants)
         val shorts:CheckBox=findViewById(R.id.shorts)
+        val laundry:CheckBox=findViewById(R.id.laundry)
+        val dry:CheckBox=findViewById(R.id.dry)
+        val iron:CheckBox=findViewById(R.id.iron)
+        val servicetext:TextView=findViewById(R.id.servicetext)
+        val servicebtn:Button=findViewById(R.id.servicebtn)
         val total:Button=findViewById(R.id.total)
         val totaltext:TextView=findViewById(R.id.totaltext)
          shirtqt=findViewById(R.id.shirtqt)
          tshirtqt=findViewById(R.id.tshirtqt)
          pantqt=findViewById(R.id.paintqt)
          shortqt=findViewById(R.id.shortqt)
+        totalcloth=findViewById(R.id.totalclothes)
 
 
        back.setOnClickListener {
@@ -57,8 +65,16 @@ class bookoption : AppCompatActivity() {
         total.setOnClickListener {
             var total1 = 0
             var isValid = true
+            val num1 = if (shirt.isChecked)shirtqt.text.toString().toInt()else 0
+            val num2 =if (tshirt.isChecked) tshirtqt.text.toString().toInt()else 0
+            val num3 =if (pants.isChecked) pantqt.text.toString().toInt()else 0
+            val num4 =if (shorts.isChecked) shortqt.text.toString().toInt()else 0
+            val sum = num1 + num2 + num3 + num4
+            val result = sum
+
 
             if (shirt.isChecked) {
+                totalcloth.text=result.toString()
                 val quantity = shirtqt.text.toString().toIntOrNull()
                 if (quantity != null && quantity > 0){
                 total1 += 10 * quantity
@@ -67,6 +83,7 @@ class bookoption : AppCompatActivity() {
                 }
             }
             if (tshirt.isChecked) {
+                totalcloth.text=result.toString()
                 val quantity = tshirtqt.text.toString().toIntOrNull()
                 if (quantity != null && quantity > 0){
                     total1 += 20 * quantity
@@ -75,6 +92,7 @@ class bookoption : AppCompatActivity() {
                 }
             }
             if (pants.isChecked) {
+                totalcloth.text=result.toString()
                 val quantity = pantqt.text.toString().toIntOrNull()
                 if (quantity != null && quantity > 0){
                     total1 += 25 * quantity
@@ -83,17 +101,54 @@ class bookoption : AppCompatActivity() {
                 }
             }
             if (shorts.isChecked) {
+                totalcloth.text=result.toString()
                 val quantity = shortqt.text.toString().toIntOrNull()
                 if (quantity != null && quantity > 0){
                     total1 += 15 * quantity
                 }else{
                     isValid=false
                 }
+
             }
             if (isValid){
                 totaltext.text="Total:-$total1"
+
             }else{
                 Toast.makeText(this,"Please Enter The Quantity",Toast.LENGTH_LONG).show()
+            }
+        }
+        servicebtn.setOnClickListener {
+            var service1 = 0
+            var isValid = true
+            if (laundry.isChecked){
+                val quality = totalcloth.text.toString().toIntOrNull()
+                if (quality !=null && quality >0){
+                    service1 += 20* quality
+                }else{
+                    isValid=false
+                }
+            }
+            if (dry.isChecked){
+                val quality = totalcloth.text.toString().toIntOrNull()
+                if (quality !=null && quality >0){
+                    service1 += 30* quality
+                }else{
+                    isValid=false
+                }
+            }
+            if (iron.isChecked){
+                val quality = totalcloth.text.toString().toIntOrNull()
+                if (quality !=null && quality >0){
+                    service1 += 25* quality
+                }else{
+                    isValid=false
+                }
+            }
+
+            if (isValid){
+                servicetext.text="$service1"
+            }else{
+                Toast.makeText(this,"kuch select kar",Toast.LENGTH_LONG).show()
             }
         }
     }

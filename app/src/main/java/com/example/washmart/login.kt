@@ -21,8 +21,8 @@ class login : Fragment() {
 
         val signup:TextView=view.findViewById(R.id.signup)
         val login:Button=view.findViewById(R.id.login)
-        val passlg:EditText=view.findViewById(R.id.passlg)
-        val namelg:EditText=view.findViewById(R.id.namelg)
+      //  val passlg:EditText=view.findViewById(R.id.passlg)
+       // val namelg:EditText=view.findViewById(R.id.namelg)
 
         signup.setOnClickListener {
             val i=Intent(requireContext(),signin::class.java)
