@@ -70,15 +70,24 @@ class bookoption : AppCompatActivity() {
             val num3 =if (pants.isChecked) pantqt.text.toString().toInt()else 0
             val num4 =if (shorts.isChecked) shortqt.text.toString().toInt()else 0
             val sum = num1 + num2 + num3 + num4
+            val sub = 0
             val result = sum
-
 
             if (shirt.isChecked) {
                 totalcloth.text=result.toString()
                 val quantity = shirtqt.text.toString().toIntOrNull()
                 if (quantity != null && quantity > 0){
                 total1 += 10 * quantity
-            }else{
+            }
+                else if (!shirt.isChecked){
+                    totalcloth.text=sub.toString()
+
+                }
+                else if (quantity==0){
+                total1 -= 10 * quantity
+                    Toast.makeText(this,"Please Enter The Quantity",Toast.LENGTH_LONG).show()
+            }
+                else{
                 isValid=false
                 }
             }
@@ -87,7 +96,11 @@ class bookoption : AppCompatActivity() {
                 val quantity = tshirtqt.text.toString().toIntOrNull()
                 if (quantity != null && quantity > 0){
                     total1 += 20 * quantity
-                }else{
+                }else if (quantity==0){
+                    total1 -= 20 * quantity
+                    Toast.makeText(this,"Please Enter The Quantity",Toast.LENGTH_LONG).show()
+                }
+                else{
                     isValid=false
                 }
             }
@@ -96,7 +109,11 @@ class bookoption : AppCompatActivity() {
                 val quantity = pantqt.text.toString().toIntOrNull()
                 if (quantity != null && quantity > 0){
                     total1 += 25 * quantity
-                }else{
+                }else if (quantity==0){
+                    total1 -= 25 * quantity
+                    Toast.makeText(this,"Please Enter The Quantity",Toast.LENGTH_LONG).show()
+                }
+                else{
                     isValid=false
                 }
             }
@@ -105,16 +122,25 @@ class bookoption : AppCompatActivity() {
                 val quantity = shortqt.text.toString().toIntOrNull()
                 if (quantity != null && quantity > 0){
                     total1 += 15 * quantity
-                }else{
+                }else if (quantity==0){
+                    total1 -= 15 * quantity
+                    Toast.makeText(this,"Please Enter The Quantity",Toast.LENGTH_LONG).show()
+                }
+                else{
                     isValid=false
                 }
 
             }
             if (isValid){
-                totaltext.text="Total:-$total1"
-
-            }else{
+                totaltext.text="₹$total1"
+            }
+            else{
                 Toast.makeText(this,"Please Enter The Quantity",Toast.LENGTH_LONG).show()
+            }
+            if (!shirt.isChecked && !tshirt.isChecked && !pants.isChecked && !shorts.isChecked ){
+                totalcloth.text=null
+                totaltext.text=null
+                Toast.makeText(this,"Please Select The Clothes",Toast.LENGTH_LONG).show()
             }
         }
         servicebtn.setOnClickListener {
@@ -124,7 +150,8 @@ class bookoption : AppCompatActivity() {
                 val quality = totalcloth.text.toString().toIntOrNull()
                 if (quality !=null && quality >0){
                     service1 += 20* quality
-                }else{
+                }
+                else{
                     isValid=false
                 }
             }
@@ -146,9 +173,11 @@ class bookoption : AppCompatActivity() {
             }
 
             if (isValid){
-                servicetext.text="$service1"
-            }else{
-                Toast.makeText(this,"kuch select kar",Toast.LENGTH_LONG).show()
+                servicetext.text="₹$service1"
+            }
+            if (!laundry.isChecked && !dry.isChecked && !iron.isChecked){
+                servicetext.text=null
+                Toast.makeText(this,"Please Select The Service",Toast.LENGTH_LONG).show()
             }
         }
     }

@@ -146,8 +146,8 @@
                 android:textStyle="bold"
                 android:fontFamily="@font/caudex"
                 android:text="LOGIN"
-                android:textColor="@color/white"
-                android:backgroundTint="#0B2545"
+                android:textColor="@color/main"
+                android:background="@drawable/cvboarder"
                 android:textSize="20dp"/>
 
             <View

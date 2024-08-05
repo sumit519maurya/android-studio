@@ -71,7 +71,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="14dp"
                 android:layout_marginTop="80dp"
-                android:text="Price:-10"
+                android:text="Price:-₹10"
                 android:textColor="#0B2545"
                 android:textSize="15dp"
                 android:textStyle="bold" />
@@ -134,7 +134,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="14dp"
                 android:layout_marginTop="170dp"
-                android:text="Price:-20"
+                android:text="Price:-₹20"
                 android:textColor="#0B2545"
                 android:textSize="15dp"
                 android:textStyle="bold" />
@@ -187,7 +187,7 @@
                 android:fontFamily="@font/caudex"
                 android:layout_marginLeft="8dp"
                 android:layout_marginTop="220dp"
-                android:text="Paint"
+                android:text="Pant"
                 android:textSize="20dp"
                 android:textStyle="bold" />
 
@@ -197,7 +197,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="14dp"
                 android:layout_marginTop="260dp"
-                android:text="Price:-25"
+                android:text="Price:-₹25"
                 android:textColor="#0B2545"
                 android:textStyle="bold"
                 android:textSize="15dp" />
@@ -260,7 +260,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="14dp"
                 android:layout_marginTop="350dp"
-                android:text="Price:-15"
+                android:text="Price:-₹15"
                 android:textColor="#0B2545"
                 android:textStyle="bold"
                 android:textSize="15dp" />
@@ -308,24 +308,24 @@
 
             <TextView
                 android:id="@+id/totaltext"
-                android:layout_width="107dp"
+                android:layout_width="90dp"
                 android:layout_height="45dp"
                 android:layout_marginLeft="150dp"
                 android:layout_marginTop="400dp"
                 android:gravity="center"
                 android:hint="Amount"
-                android:textSize="25dp"
+                android:textSize="20dp"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/toext"
-                android:layout_width="131dp"
+                android:layout_width="141dp"
                 android:layout_height="45dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="400dp"
                 android:gravity="center"
                 android:textColor="@color/main"
-                android:text="Cloth Price:-"
+                android:text="Clothes Price:-"
                 android:textSize="20dp"
                 android:textStyle="bold" />
 
@@ -454,12 +454,12 @@
                 android:id="@+id/totalclothes"
                 android:layout_width="101dp"
                 android:layout_height="38dp"
-                android:layout_marginLeft="170dp"
+                android:layout_marginLeft="150dp"
                 android:layout_marginTop="90dp"
                 android:gravity="center"
                 android:hint="Clothes"
-                android:textColor="@color/black"
-                android:textSize="25dp"
+                android:textColor="#666666"
+                android:textSize="20dp"
                 android:textStyle="bold" />
 
             <TextView
@@ -486,7 +486,7 @@
             android:text="Next"
             android:fontFamily="@font/caudex"
             android:textStyle="bold"
-            android:textColor="@color/black"
+            android:textColor="@color/main"
             android:textSize="20dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -559,12 +559,12 @@
                 android:id="@+id/servicetext"
                 android:layout_width="101dp"
                 android:layout_height="40dp"
-                android:layout_marginLeft="170dp"
+                android:layout_marginLeft="165dp"
                 android:layout_marginTop="110dp"
                 android:gravity="center"
-                android:hint="Price"
+                android:hint="Amount"
                 android:textColor="@color/black"
-                android:textSize="25dp"
+                android:textSize="20dp"
                 android:textStyle="bold" />
 
             <TextView
@@ -583,7 +583,7 @@
                 android:id="@+id/servicebtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/black"
+                android:textColor="@color/main"
                 android:layout_marginTop="110dp"
                 android:fontFamily="@font/caudex"
                 android:textStyle="bold"
@@ -598,7 +598,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="14dp"
                 android:layout_marginTop="70dp"
-                android:text="Price:-20"
+                android:text="Price:-₹20"
                 android:textColor="#0B2545"
                 android:textSize="15dp"
                 android:textStyle="bold" />
@@ -609,7 +609,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="140dp"
                 android:layout_marginTop="70dp"
-                android:text="Price:-30"
+                android:text="Price:-₹30"
                 android:textColor="#0B2545"
                 android:textSize="15dp"
                 android:textStyle="bold" />
@@ -620,7 +620,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="290dp"
                 android:layout_marginTop="70dp"
-                android:text="Price:-25"
+                android:text="Price:-₹25"
                 android:textColor="#0B2545"
                 android:textSize="15dp"
                 android:textStyle="bold" />
@@ -638,7 +638,7 @@
             android:text="Back"
             android:textStyle="bold"
             android:fontFamily="@font/caudex"
-            android:textColor="@color/black"
+            android:textColor="@color/main"
             android:textSize="20dp"
             android:layout_marginBottom="20dp"
             app:layout_constraintBottom_toBottomOf="parent"

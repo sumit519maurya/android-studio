@@ -72,7 +72,7 @@
                         android:layout_below="@id/booknowimage"
                         android:layout_centerHorizontal="true"
                         android:fontFamily="@font/caudex"
-                        android:text="Book Now"
+                        android:text="Order"
                         android:textSize="24sp" />
 
                     <ImageView
@@ -106,7 +106,7 @@
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="5dp"
                         android:fontFamily="@font/caudex"
-                        android:text="About You"
+                        android:text="User Info"
                         android:textSize="24sp" />
 
                     <ImageView
@@ -189,7 +189,7 @@
                         android:layout_marginTop="5dp"
                         android:fontFamily="@font/caudex"
                         android:gravity="center"
-                        android:text="Order"
+                        android:text="History"
                         android:textSize="24sp" />
 
                     <ImageView
@@ -205,8 +205,8 @@
 
         <ImageView
             android:id="@+id/imageView2"
-            android:layout_width="452dp"
-            android:layout_height="185dp"
+            android:layout_width="492dp"
+            android:layout_height="200dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.512"
