@@ -118,7 +118,7 @@
                         android:layout_height="90dp"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="15dp"
-                        app:srcCompat="@drawable/info" />
+                        app:srcCompat="@drawable/profileimg" />
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>
         </LinearLayout>
