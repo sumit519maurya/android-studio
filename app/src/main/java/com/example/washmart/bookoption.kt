@@ -54,14 +54,20 @@ class bookoption : AppCompatActivity() {
         totalcloth=findViewById(R.id.totalclothes)
 
 
+
+
        back.setOnClickListener {
            val i= Intent(this,homepage::class.java)
            startActivity(i)
        }
         next.setOnClickListener {
-            val i= Intent(this,orderpage2::class.java)
+            val i= Intent(this,infopage::class.java)
             startActivity(i)
         }
+
+
+
+
         total.setOnClickListener {
             var total1 = 0
             var isValid = true
@@ -70,7 +76,6 @@ class bookoption : AppCompatActivity() {
             val num3 =if (pants.isChecked) pantqt.text.toString().toInt()else 0
             val num4 =if (shorts.isChecked) shortqt.text.toString().toInt()else 0
             val sum = num1 + num2 + num3 + num4
-            val sub = 0
             val result = sum
 
             if (shirt.isChecked) {
@@ -79,10 +84,6 @@ class bookoption : AppCompatActivity() {
                 if (quantity != null && quantity > 0){
                 total1 += 10 * quantity
             }
-                else if (!shirt.isChecked){
-                    totalcloth.text=sub.toString()
-
-                }
                 else if (quantity==0){
                 total1 -= 10 * quantity
                     Toast.makeText(this,"Please Enter The Quantity",Toast.LENGTH_LONG).show()
@@ -143,6 +144,10 @@ class bookoption : AppCompatActivity() {
                 Toast.makeText(this,"Please Select The Clothes",Toast.LENGTH_LONG).show()
             }
         }
+
+
+
+
         servicebtn.setOnClickListener {
             var service1 = 0
             var isValid = true
@@ -181,6 +186,9 @@ class bookoption : AppCompatActivity() {
             }
         }
     }
+
+
+
     fun add(v: View) {
         count++
         shirtqt.text=count.toString()

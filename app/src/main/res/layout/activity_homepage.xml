@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".homepage"
+    android:background="@color/white"
     android:fitsSystemWindows="true"
     >
 
@@ -56,6 +57,7 @@
                 android:layout_height="154dp"
                 android:layout_margin="10dp"
                 android:layout_weight="1"
+                android:background="@color/white"
                 android:baselineAligned="false"
                 app:cardCornerRadius="53dp"
                 app:cardElevation="5dp">
@@ -91,6 +93,7 @@
                 android:layout_margin="10dp"
                 android:layout_weight="1"
                 app:cardCornerRadius="53dp"
+                android:background="@color/white"
                 app:cardElevation="5dp">
 
                 <RelativeLayout
@@ -99,18 +102,18 @@
                     android:background="@drawable/cvboarder">
 
                     <TextView
-                        android:id="@+id/aboutus"
+                        android:id="@+id/profile"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/infoimg"
+                        android:layout_below="@id/profileimg"
                         android:layout_centerHorizontal="true"
                         android:layout_marginTop="5dp"
                         android:fontFamily="@font/caudex"
-                        android:text="User Info"
+                        android:text="Profile"
                         android:textSize="24sp" />
 
                     <ImageView
-                        android:id="@+id/infoimg"
+                        android:id="@+id/profileimg"
                         android:layout_width="90dp"
                         android:layout_height="90dp"
                         android:layout_centerHorizontal="true"
@@ -136,6 +139,7 @@
             <androidx.cardview.widget.CardView
                 android:layout_width="185dp"
                 android:layout_height="154dp"
+                android:background="@color/white"
                 android:layout_margin="10dp"
                 android:layout_weight="1"
                 app:cardCornerRadius="53dp"
@@ -171,6 +175,7 @@
                 android:layout_width="185dp"
                 android:layout_height="154dp"
                 android:layout_margin="10dp"
+                android:background="@color/white"
                 android:layout_weight="1"
                 app:cardCornerRadius="53dp"
                 app:cardElevation="5dp">

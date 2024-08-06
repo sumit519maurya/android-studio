@@ -15,7 +15,7 @@ class infopage : AppCompatActivity() {
         setContentView(R.layout.activity_infopage)
         val save:Button=findViewById(R.id.save)
         save.setOnClickListener {
-            val i=Intent(this,infosavepage::class.java)
+            val i=Intent(this,billingpage::class.java)
             startActivity(i)
         }
 

@@ -48,7 +48,7 @@
         android:id="@+id/cardview"
         app:cardCornerRadius="53dp"
         app:cardElevation="40dp"
-
+        app:cardBackgroundColor="@color/white"
         android:layout_marginBottom="-35dp"
         android:layout_alignParentBottom="true"
         >
@@ -146,8 +146,9 @@
                 android:textStyle="bold"
                 android:fontFamily="@font/caudex"
                 android:text="LOGIN"
-                android:textColor="@color/main"
-                android:background="@drawable/cvboarder"
+                android:elevation="20dp"
+                android:textColor="@color/white"
+                android:background="@drawable/btn"
                 android:textSize="20dp"/>
 
             <View

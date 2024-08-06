@@ -386,7 +386,6 @@
             app:cardElevation="20dp"
             app:cardBackgroundColor="@color/white"
             app:cardCornerRadius="30dp"
-
             app:layout_constraintEnd_toEndOf="@+id/cardView"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/cardView"

@@ -25,8 +25,8 @@ class homepage : AppCompatActivity() {
        val booknowimgae:ImageView=findViewById(R.id.booknowimage)
         val booknowtext:TextView=findViewById(R.id.booknowtext)
 
-        val infoimg:ImageView=findViewById(R.id.infoimg)
-        val aboutus:TextView=findViewById(R.id.aboutus)
+        val profileimg:ImageView=findViewById(R.id.profileimg)
+        val profile:TextView=findViewById(R.id.profile)
 
         val drawerLayout: DrawerLayout = findViewById(R.id.main)
         val navigation: NavigationView = findViewById(R.id.navigation)
@@ -64,12 +64,12 @@ class homepage : AppCompatActivity() {
             val i=Intent(this,bookoption::class.java)
             startActivity(i)
         }
-        infoimg.setOnClickListener {
-            val i=Intent(this,infopage::class.java)
+        profileimg.setOnClickListener {
+            val i=Intent(this,profilepage::class.java)
             startActivity(i)
         }
-        aboutus.setOnClickListener {
-            val i=Intent(this,infopage::class.java)
+        profile.setOnClickListener {
+            val i=Intent(this,profilepage::class.java)
             startActivity(i)
         }
 
