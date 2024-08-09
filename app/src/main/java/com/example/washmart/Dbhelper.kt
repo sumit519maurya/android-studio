@@ -6,7 +6,12 @@ import android.content.Context
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
-
+data class User(
+    val username: String,
+    val password: String,
+    val email: String,
+    val phoneNumber: String
+)
 class Dbhelper (context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
 
     companion object {
@@ -55,6 +60,35 @@ class Dbhelper (context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, nul
         db.close()
         return isUserExists
     }
+    fun deleteUser(username: String): Boolean {
+        val db = this.writableDatabase
+        val whereClause = "$COLUMN_USERNAME = ?"
+        val whereArgs = arrayOf(username)
+
+        val result = db.delete(TABLE_USERS, whereClause, whereArgs)
+        db.close()
+
+        return result > 0
+    }
+
+    @SuppressLint("Range")
+    fun getUser(username: String): User {
+        val db = this.readableDatabase
+        val query = "SELECT * FROM users WHERE username = ?"
+        val cursor = db.rawQuery(query, arrayOf(username))
+
+        if (cursor.moveToFirst()) {
+            val password = cursor.getString(cursor.getColumnIndex("password"))
+            val email = cursor.getString(cursor.getColumnIndex("email"))
+            val phoneNumber = cursor.getString(cursor.getColumnIndex("phone_number"))
+
+            cursor.close()
+            return User (username, password, email, phoneNumber)
+        }
+
+        cursor.close()
+        throw NoSuchElementException("No user found with username: $username")
+    }
 
     @SuppressLint("Range")
     fun getAllUsers(): List<String> {
@@ -73,4 +107,7 @@ class Dbhelper (context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, nul
         db.close()
         return users
     }
+
 }
+
+

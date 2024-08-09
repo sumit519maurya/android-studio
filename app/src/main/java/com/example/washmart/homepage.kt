@@ -10,10 +10,7 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.drawerlayout.widget.DrawerLayout
-import androidx.fragment.app.Fragment
 import com.google.android.material.navigation.NavigationView
 
 class homepage : AppCompatActivity() {
@@ -31,6 +28,10 @@ class homepage : AppCompatActivity() {
         val drawerLayout: DrawerLayout = findViewById(R.id.main)
         val navigation: NavigationView = findViewById(R.id.navigation)
         val tolbar: Toolbar = findViewById(R.id.toolbar)
+        val username = intent.getStringExtra("username")
+        val email = intent.getStringExtra("email")
+        val phoneNumber = intent.getStringExtra("phoneNumber")
+        val password= intent.getStringExtra("password")
         setSupportActionBar(tolbar)
         toggle = ActionBarDrawerToggle(
             this,

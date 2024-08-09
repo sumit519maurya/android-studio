@@ -1,5 +1,6 @@
 package com.example.washmart
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -32,14 +33,25 @@ class login : Fragment() {
             startActivity(i)
         }
         login.setOnClickListener {
-            val i=Intent(requireContext(),homepage::class.java)
+
             val username = namelg.text.toString()
             val password = passlg.text.toString()
             if (dbHelper.checkUser(username, password)) {
                 Toast.makeText(requireContext(), "Login Successful", Toast.LENGTH_SHORT).show()
-                startActivity(i)
+                val sharedPref = requireContext().getSharedPreferences("UserProfile", Context.MODE_PRIVATE)
+                val user = dbHelper.getUser(username)
+                with(sharedPref.edit()) {
+                    putString("username", user.username)
+                    putString("password", user.password)
+                    putString("email", user.email)
+                    putString("phoneNumber", user.phoneNumber)
+                    apply()
+                }
+                val intent = Intent(requireContext(), homepage::class.java)
+                startActivity(intent)
+                requireActivity().finish()
             } else {
-                Toast.makeText(requireContext(), "Invalid Credentials", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), "Login Failed", Toast.LENGTH_SHORT).show()
             }
         }
         admin.setOnClickListener{

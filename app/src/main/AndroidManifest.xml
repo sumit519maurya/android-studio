@@ -15,19 +15,22 @@
         android:theme="@style/Theme.Washmart"
         tools:targetApi="31">
         <activity
-            android:name=".adminpage"
+            android:name=".userdesign"
             android:exported="true">
 
         </activity>
         <activity
-            android:name=".profilepage"
+            android:name=".adminpage"
             android:exported="true"></activity>
+        <activity
+            android:name=".profilepage"
+            android:exported="true" />
         <activity
             android:name=".infopage"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".billingpage"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".bookoption"
             android:exported="true" />
