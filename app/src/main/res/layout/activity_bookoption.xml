@@ -62,6 +62,7 @@
                 android:layout_marginTop="40dp"
                 android:fontFamily="@font/caudex"
                 android:text="Shirt"
+                android:textColor="@color/black"
                 android:textSize="20dp"
                 android:textStyle="bold" />
 
@@ -123,6 +124,7 @@
                 android:layout_height="42dp"
                 android:fontFamily="@font/caudex"
                 android:layout_marginLeft="8dp"
+                android:textColor="@color/black"
                 android:layout_marginTop="130dp"
                 android:text="Tshirt"
                 android:textSize="20dp"
@@ -186,6 +188,7 @@
                 android:layout_height="43dp"
                 android:fontFamily="@font/caudex"
                 android:layout_marginLeft="8dp"
+                android:textColor="@color/black"
                 android:layout_marginTop="220dp"
                 android:text="Pant"
                 android:textSize="20dp"
@@ -249,6 +252,7 @@
                 android:layout_height="44dp"
                 android:fontFamily="@font/caudex"
                 android:layout_marginLeft="8dp"
+                android:textColor="@color/black"
                 android:layout_marginTop="310dp"
                 android:text="Shorts"
                 android:textSize="20dp"
@@ -315,6 +319,7 @@
                 android:gravity="center"
                 android:hint="Amount"
                 android:textSize="20dp"
+                android:textColorHint="@color/black"
                 android:textStyle="bold" />
 
             <TextView
@@ -406,10 +411,11 @@
                 android:textStyle="bold" />
 
             <CheckBox
-                android:id="@+id/coton"
+                android:id="@+id/cotton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/caudex"
+                android:textColor="@color/black"
                 android:layout_marginLeft="8dp"
                 android:layout_marginTop="45dp"
                 android:text="Cotton"
@@ -422,6 +428,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/caudex"
                 android:layout_marginLeft="110dp"
+                android:textColor="@color/black"
                 android:layout_marginTop="45dp"
                 android:text="Wool"
                 android:textSize="17dp"
@@ -432,6 +439,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/caudex"
+                android:textColor="@color/black"
                 android:layout_marginLeft="200dp"
                 android:layout_marginTop="45dp"
                 android:text="Silk"
@@ -442,6 +450,7 @@
                 android:id="@+id/nylon"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/black"
                 android:fontFamily="@font/caudex"
                 android:layout_marginLeft="275dp"
                 android:layout_marginTop="45dp"
@@ -457,7 +466,7 @@
                 android:layout_marginTop="90dp"
                 android:gravity="center"
                 android:hint="Clothes"
-                android:textColor="#666666"
+                android:textColorHint="@color/black"
                 android:textSize="20dp"
                 android:textStyle="bold" />
 
@@ -491,7 +500,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.93"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cardView3"
+            app:layout_constraintTop_toBottomOf="@+id/cardView4"
             app:layout_constraintVertical_bias="0.0" />
 
         <androidx.cardview.widget.CardView
@@ -527,6 +536,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/caudex"
                 android:layout_marginTop="40dp"
+                android:textColor="@color/black"
                 android:layout_marginLeft="8dp"
                 android:text="Laundry"
                 android:textSize="17dp"
@@ -539,6 +549,7 @@
                 android:fontFamily="@font/caudex"
                 android:layout_marginLeft="125dp"
                 android:layout_marginTop="40dp"
+                android:textColor="@color/black"
                 android:text="Dry Cleaning"
                 android:textSize="17dp"
                 android:textStyle="bold" />
@@ -550,6 +561,7 @@
                 android:fontFamily="@font/caudex"
                 android:layout_marginLeft="280dp"
                 android:layout_marginTop="40dp"
+                android:textColor="@color/black"
                 android:text="Ironing"
                 android:textSize="17dp"
                 android:textStyle="bold" />
@@ -562,7 +574,7 @@
                 android:layout_marginTop="110dp"
                 android:gravity="center"
                 android:hint="Amount"
-                android:textColor="@color/black"
+                android:textColorHint="@color/black"
                 android:textSize="20dp"
                 android:textStyle="bold" />
 
@@ -627,6 +639,54 @@
 
         </androidx.cardview.widget.CardView>
 
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView4"
+            android:layout_width="379dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="24dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="30dp"
+            app:cardElevation="20dp"
+            app:layout_constraintEnd_toEndOf="@+id/cardView3"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/cardView3"
+            app:layout_constraintTop_toBottomOf="@+id/cardView3">
+
+
+            <TextView
+                android:id="@+id/ftotaltext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="170dp"
+                android:layout_marginTop="50dp"
+                android:hint="Amount"
+                android:textColorHint="@color/black"
+                android:textSize="23dp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/ftotalbtn"
+                android:layout_width="109dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="260dp"
+                android:layout_marginTop="40dp"
+                android:background="@drawable/cvboarder"
+                android:text="Total"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Total Amount:-"
+                android:textSize="23dp"
+                android:textColor="@color/main"
+                android:textStyle="bold"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="50dp"/>
+        </androidx.cardview.widget.CardView>
+
+
         <Button
             android:id="@+id/backbtn"
             android:layout_width="137dp"
@@ -644,7 +704,7 @@
             app:layout_constraintEnd_toStartOf="@+id/nextbtn"
             app:layout_constraintHorizontal_bias="0.161"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cardView3"
+            app:layout_constraintTop_toBottomOf="@+id/cardView4"
             app:layout_constraintVertical_bias="0.0" />
 
         <TextView

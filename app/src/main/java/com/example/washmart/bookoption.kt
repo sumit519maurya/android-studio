@@ -34,10 +34,16 @@ class bookoption : AppCompatActivity() {
         val laundry:CheckBox=findViewById(R.id.laundry)
         val dry:CheckBox=findViewById(R.id.dry)
         val iron:CheckBox=findViewById(R.id.iron)
+        val cotton:CheckBox=findViewById(R.id.cotton)
+        val wool:CheckBox=findViewById(R.id.wool)
+        val silk:CheckBox=findViewById(R.id.silk)
+        val nylon:CheckBox=findViewById(R.id.nylon)
         val servicetext:TextView=findViewById(R.id.servicetext)
         val servicebtn:Button=findViewById(R.id.servicebtn)
         val total:Button=findViewById(R.id.total)
         val totaltext:TextView=findViewById(R.id.totaltext)
+        val ftotaltext:TextView=findViewById(R.id.ftotaltext)
+        val ftotalbtn:Button=findViewById(R.id.ftotalbtn)
          shirtqt=findViewById(R.id.shirtqt)
          tshirtqt=findViewById(R.id.tshirtqt)
          pantqt=findViewById(R.id.paintqt)
@@ -74,7 +80,7 @@ class bookoption : AppCompatActivity() {
                 val quantity = shirtqt.text.toString().toIntOrNull()
                 if (quantity != null && quantity > 0){
                 total1 += 10 * quantity
-            } else if (quantity==0){
+            }else if (quantity==0){
                 total1 -= 10 * quantity
                     Toast.makeText(this,"Please Enter The Quantity",Toast.LENGTH_LONG).show()
             }
@@ -123,7 +129,7 @@ class bookoption : AppCompatActivity() {
 
             }
             if (isValid){
-                totaltext.text="₹$total1"
+                totaltext.text="$total1"
             }
             else{
                 Toast.makeText(this,"Please Enter The Quantity",Toast.LENGTH_LONG).show()
@@ -168,12 +174,25 @@ class bookoption : AppCompatActivity() {
             }
 
             if (isValid){
-                servicetext.text="₹$service1"
+                servicetext.text="$service1"
             }
             if (!laundry.isChecked && !dry.isChecked && !iron.isChecked){
                 servicetext.text=null
                 Toast.makeText(this,"Please Select The Service",Toast.LENGTH_LONG).show()
             }
+        }
+        ftotalbtn.setOnClickListener {
+            val totaltext = totaltext.text.toString()
+            val serviceText = servicetext.text.toString()
+            val isFabricSelected = cotton.isChecked || silk.isChecked || wool.isChecked || nylon.isChecked
+            if (totaltext.isEmpty() || serviceText.isEmpty() || !isFabricSelected) {
+                Toast.makeText(this, "Something Is Empty Please Fill It First ", Toast.LENGTH_SHORT).show()
+            } else {
+                    val clothTotal  = totaltext.toDouble()
+                    val serviceTotal = serviceText.toDouble()
+                    val finalTotal = clothTotal + serviceTotal
+                    ftotaltext.text = finalTotal.toString()
+                }
         }
     }
 
