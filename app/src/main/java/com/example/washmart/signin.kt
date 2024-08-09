@@ -4,26 +4,47 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 
 class signin : AppCompatActivity() {
+    private lateinit var dbHelper: Dbhelper
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_signin)
+
+        dbHelper = Dbhelper(this)
         val signinbtn=findViewById<Button>(R.id.signinbtn)
         val signup =findViewById<TextView>(R.id.signup)
-       // val namesi =findViewById<TextView>(R.id.namesi)
-        //val emailsi =findViewById<TextView>(R.id.emailsi)
-        //val phonesi =findViewById<TextView>(R.id.phonesi)
-        //val passsi =findViewById<TextView>(R.id.passsi)
+        val namesi =findViewById<TextView>(R.id.namesi)
+        val emailsi =findViewById<TextView>(R.id.emailsi)
+        val phonesi =findViewById<TextView>(R.id.phonesi)
+        val passsi =findViewById<TextView>(R.id.passsi)
+
+
         signinbtn.setOnClickListener {
             val i=Intent(this,login::class.java)
-            startActivity(i)
+            val username = namesi.text.toString()
+            val password = passsi.text.toString()
+            val email = emailsi.text.toString()
+            val phoneNumber = phonesi.text.toString()
+
+            if (dbHelper.addUser(username, password, email, phoneNumber)) {
+                Toast.makeText(this, "Signup Successful", Toast.LENGTH_SHORT).show()
+
+                startActivity(i)
+            } else {
+                Toast.makeText(this, "Signup Failed", Toast.LENGTH_SHORT).show()
+            }
+
         }
+
+
         signup.setOnClickListener {
             val i=Intent(this,login::class.java)
+
             startActivity(i)
         }
     }
