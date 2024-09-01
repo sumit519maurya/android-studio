@@ -1,11 +1,327 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/color2"
-    tools:context=".billingpage">
+    android:fillViewport="true">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/color2"
+        android:orientation="vertical"
+        tools:context=".billingpage">
+
+        <TextView
+            android:id="@+id/tvBillTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" Detailed Charges"
+            android:textStyle="bold"
+            android:fontFamily="@font/caudex"
+            android:textSize="34sp"
+            android:textColor="@color/main"
+            android:gravity="center"
+            android:paddingTop="30dp"
+            android:paddingBottom="16dp"
+            android:layout_gravity="center_horizontal"/>
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="1"
+            android:background="@drawable/boarder_bill"
+            android:padding="8dp">
+
+
+            <TableRow
+                android:background="@color/main"
+                android:padding="8dp">
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="8dp"
+                    android:gravity="center"
+                    android:text="Item"
+                    android:textColor="@android:color/white"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    />
+
+                <TextView
+                    android:layout_width="160dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="8dp"
+                    android:textSize="20dp"
+                    android:gravity="center"
+                    android:layout_marginRight="10dp"
+                    android:text="    Details"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold"
+                    />
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="8dp"
+                    android:text="   Price"
+                    android:textSize="20dp"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold"
+                    />
+            </TableRow>
+
+
+            <TableRow
+                android:background="@drawable/boarder_bill"
+                android:padding="8dp">
+
+                <TextView
+                    android:text="Cloths"
+                    android:padding="8dp"
+                    android:textSize="20dp"
+                    android:gravity="center"
+                    android:textColor="@color/main"
+                    />
+
+                <TextView
+                    android:id="@+id/tvSelectedCloths"
+                    android:padding="11dp"
+                    android:textSize="20dp"
+                    android:gravity="center"
+                    android:textColor="@color/main"
+                    />
+
+                <TextView
+                    android:id="@+id/tvClothPrice"
+                    android:layout_width="100dp"
+                    android:padding="11dp"
+                    android:gravity="center"
+                    android:textSize="20dp"
+                    android:textColor="@color/main"
+                    />
+            </TableRow>
+
+
+            <TableRow
+                android:background="@drawable/boarder_bill"
+                android:padding="8dp">
+
+                <TextView
+                    android:text="Fabric"
+                    android:padding="8dp"
+                    android:gravity="center"
+                    android:textSize="20dp"
+                    android:textColor="@color/main"
+                    />
+
+                <TextView
+                    android:id="@+id/tvSelectedFabric"
+                    android:padding="11dp"
+                    android:gravity="center"
+                    android:textSize="20dp"
+                    android:textColor="@color/main"
+                    />
+
+
+            </TableRow>
+
+
+            <TableRow
+                android:background="@drawable/boarder_bill"
+                android:padding="8dp">
+
+                <TextView
+                    android:text="Total Cloth"
+                    android:padding="8dp"
+                    android:gravity="center"
+                    android:textSize="20dp"
+                    android:textColor="@color/main"
+                    />
+
+                <TextView
+                    android:id="@+id/tvTotalCloths"
+                    android:padding="11dp"
+                    android:gravity="center"
+                    android:textSize="20dp"
+                    android:textColor="@color/main"
+                    />
+            </TableRow>
+
+
+            <TableRow
+                android:background="@drawable/boarder_bill"
+                android:padding="8dp">
+
+                <TextView
+                    android:text="Service"
+                    android:padding="8dp"
+                    android:textSize="20dp"
+                    android:gravity="center"
+                    android:textColor="@color/main"/>
+
+                <TextView
+                    android:id="@+id/tvSelectedService"
+                    android:padding="11dp"
+                    android:textSize="20dp"
+                    android:gravity="center"
+                    android:textColor="@color/main"/>
+
+                <TextView
+                    android:id="@+id/tvServiceCharge"
+                    android:layout_width="100dp"
+                    android:padding="11dp"
+                    android:gravity="center"
+                    android:textSize="20dp"
+                    android:textColor="@color/main"/>
+            </TableRow>
+
+
+            <TableRow
+                android:background="@drawable/boarder_bill"
+                android:padding="8dp">
+
+                <TextView
+                    android:text="Total"
+                    android:textStyle="bold"
+                    android:padding="8dp"
+                    android:textSize="20dp"
+                    android:gravity="center"
+                    android:textColor="@color/main"
+                    />
+
+                <TextView
+                    android:id="@+id/tvFinalTotal"
+                    android:layout_width="100dp"
+                    android:padding="11dp"
+                    android:textSize="20dp"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:textColor="@color/main"/>
+            </TableRow>
+
+        </TableLayout>
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/boarder_bill"
+            android:padding="8dp"
+            android:stretchColumns="1">
+
+
+            <TableRow
+                android:background="@color/main"
+                android:padding="8dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="8dp"
+                    android:text="Field"
+                    android:textColor="@android:color/white"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:padding="8dp"
+                    android:text="     Value"
+                    android:textColor="@android:color/white"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+            </TableRow>
+
+
+            <TableRow
+                android:background="@drawable/boarder_bill"
+                android:padding="8dp">
+
+                <TextView
+                    android:padding="8dp"
+                    android:text="Username"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/tvUserName"
+                    android:padding="11dp"
+                    android:textColor="@android:color/black" />
+            </TableRow>
+
+            <TableRow
+                android:background="@drawable/boarder_bill"
+                android:padding="8dp">
+
+                <TextView
+                    android:padding="8dp"
+                    android:text="Phone Number"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/tvUserPhone"
+                    android:padding="11dp"
+                    android:textColor="@android:color/black" />
+            </TableRow>
+
+            <TableRow
+                android:background="@drawable/boarder_bill"
+                android:padding="8dp">
+
+                <TextView
+                    android:padding="8dp"
+                    android:text="Order Date"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/tvOrderDate"
+                    android:padding="11dp"
+                    android:textColor="@android:color/black" />
+            </TableRow>
+
+            <TableRow
+                android:background="@drawable/boarder_bill"
+                android:padding="8dp">
+
+                <TextView
+                    android:padding="8dp"
+                    android:text="Address"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/tvUserAddress"
+                    android:padding="11dp"
+                    android:textColor="@android:color/black" />
+            </TableRow>
+
+        </TableLayout>
+
+        <Button
+            android:id="@+id/btnSave"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:textSize="20dp"
+            android:text="Save"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="16dp"
+            android:padding="12dp"
+            android:background="@drawable/btn"
+            android:textColor="@android:color/white"/>
+
+    </LinearLayout>
+
+</ScrollView>
