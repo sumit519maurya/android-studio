@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true">
+    android:fillViewport="true"
+    tools:context=".user_bill">
 
     <LinearLayout
         android:id="@+id/main"
@@ -14,20 +15,6 @@
         android:background="@drawable/color2"
         android:orientation="vertical"
         tools:context=".billingpage">
-
-        <TextView
-            android:id="@+id/tvBillTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text=" Detailed Charges"
-            android:textStyle="bold"
-            android:fontFamily="@font/caudex"
-            android:textSize="34sp"
-            android:textColor="@color/main"
-            android:gravity="center"
-            android:paddingTop="30dp"
-            android:paddingBottom="16dp"
-            android:layout_gravity="center_horizontal"/>
 
         <TableLayout
             android:layout_width="match_parent"
@@ -323,19 +310,6 @@
 
         </TableLayout>
 
-        <Button
-            android:id="@+id/btnSave"
-            android:layout_width="200dp"
-            android:layout_height="60dp"
-            android:textSize="25dp"
-            android:text="Save"
-            android:layout_marginBottom="15dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="4dp"
-            android:padding="12dp"
-            android:background="@drawable/cvboarder"
-            android:textColor="@color/white"/>
-
     </LinearLayout>
 
-</ScrollView>
+</LinearLayout>

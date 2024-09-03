@@ -3,6 +3,7 @@ package com.example.washmart
 import android.content.Intent
 import android.os.Bundle
 import android.widget.ImageView
+import android.widget.RelativeLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -26,12 +27,13 @@ class homepage : AppCompatActivity() {
         val profile:TextView=findViewById(R.id.profile)
 
         val drawerLayout: DrawerLayout = findViewById(R.id.main)
+        val history1: RelativeLayout = findViewById(R.id.history)
         val navigation: NavigationView = findViewById(R.id.navigation)
         val tolbar: Toolbar = findViewById(R.id.toolbar)
-        val username = intent.getStringExtra("username")
+        /*val username = intent.getStringExtra("username")
         val email = intent.getStringExtra("email")
         val phoneNumber = intent.getStringExtra("phoneNumber")
-        val password= intent.getStringExtra("password")
+        val password= intent.getStringExtra("password")*/
         setSupportActionBar(tolbar)
         toggle = ActionBarDrawerToggle(
             this,
@@ -71,6 +73,11 @@ class homepage : AppCompatActivity() {
         }
         profile.setOnClickListener {
             val i=Intent(this,profilepage::class.java)
+            startActivity(i)
+        }
+
+        history1.setOnClickListener {
+            val i=Intent(this,history::class.java)
             startActivity(i)
         }
 

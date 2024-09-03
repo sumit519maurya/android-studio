@@ -45,6 +45,7 @@ class login : Fragment() {
                     putString("password", user.password)
                     putString("email", user.email)
                     putString("phoneNumber", user.phoneNumber)
+                    putLong("userid", user.userid.toLong())
                     apply()
                 }
                 val intent = Intent(requireContext(), homepage::class.java)

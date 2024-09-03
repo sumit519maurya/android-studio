@@ -1,6 +1,5 @@
 package com.example.washmart
 
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -37,14 +36,14 @@ class signin : AppCompatActivity() {
 
             if (username.isNotEmpty() && password.isNotEmpty() && email.isNotEmpty() && phoneNumber.isNotEmpty()) {
                 if (dbHelper.addUser(username, password, email, phoneNumber)) {
-                    val sharedPref = getSharedPreferences("UserProfile", Context.MODE_PRIVATE)
+                   /* val sharedPref = getSharedPreferences("UserProfile", Context.MODE_PRIVATE)
                     with(sharedPref.edit()) {
                         putString("username", username)
                         putString("password", password)
                         putString("email", email)
                         putString("phoneNumber", phoneNumber)
                         apply()
-                    }
+                    }*/
                     Log.d("signin", "Storing data: username=$username, password=$password, email=$email, phoneNumber=$phoneNumber")
 
                     Toast.makeText(this, "Signup Successful", Toast.LENGTH_SHORT).show()
