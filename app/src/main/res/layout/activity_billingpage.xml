@@ -139,7 +139,7 @@
                 android:padding="8dp">
 
                 <TextView
-                    android:text="Total Cloth"
+                    android:text="Total Clothes"
                     android:padding="8dp"
                     android:gravity="center"
                     android:textSize="20dp"
@@ -212,7 +212,7 @@
         <TableLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="5dp"
             android:background="@drawable/boarder_bill"
             android:padding="8dp"
             android:stretchColumns="1">
@@ -237,7 +237,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
                     android:padding="8dp"
-                    android:text="     Value"
+                    android:text="        Value"
                     android:textColor="@android:color/white"
                     android:textSize="20dp"
                     android:textStyle="bold" />
@@ -250,13 +250,14 @@
 
                 <TextView
                     android:padding="8dp"
-                    android:text="Username"
+                    android:text="Username :"
                     android:textColor="@android:color/black"
                     android:textSize="18sp" />
 
                 <TextView
                     android:id="@+id/tvUserName"
                     android:padding="11dp"
+                    android:textSize="18sp"
                     android:textColor="@android:color/black" />
             </TableRow>
 
@@ -266,13 +267,14 @@
 
                 <TextView
                     android:padding="8dp"
-                    android:text="Phone Number"
+                    android:text="Phone Number :"
                     android:textColor="@android:color/black"
                     android:textSize="18sp" />
 
                 <TextView
                     android:id="@+id/tvUserPhone"
                     android:padding="11dp"
+                    android:textSize="18sp"
                     android:textColor="@android:color/black" />
             </TableRow>
 
@@ -282,13 +284,14 @@
 
                 <TextView
                     android:padding="8dp"
-                    android:text="Order Date"
+                    android:text="Order Date :"
                     android:textColor="@android:color/black"
                     android:textSize="18sp" />
 
                 <TextView
                     android:id="@+id/tvOrderDate"
                     android:padding="11dp"
+                    android:textSize="18sp"
                     android:textColor="@android:color/black" />
             </TableRow>
 
@@ -298,14 +301,24 @@
 
                 <TextView
                     android:padding="8dp"
-                    android:text="Address"
+                    android:text="Address :"
                     android:textColor="@android:color/black"
                     android:textSize="18sp" />
 
                 <TextView
                     android:id="@+id/tvUserAddress"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
                     android:padding="11dp"
-                    android:textColor="@android:color/black" />
+                    android:textColor="@android:color/black"
+                    android:maxLines="7"
+                    android:textSize="16sp"
+                    android:ellipsize="end"
+                    android:singleLine="false"
+                    android:scrollHorizontally="false"
+                    android:layout_weight="1"
+                    />
+
             </TableRow>
 
         </TableLayout>
@@ -313,14 +326,15 @@
         <Button
             android:id="@+id/btnSave"
             android:layout_width="200dp"
-            android:layout_height="50dp"
-            android:textSize="20dp"
+            android:layout_height="60dp"
+            android:textSize="25dp"
             android:text="Save"
+            android:layout_marginBottom="15dp"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="4dp"
             android:padding="12dp"
-            android:background="@drawable/btn"
-            android:textColor="@android:color/white"/>
+            android:background="@drawable/cvboarder"
+            android:textColor="@color/white"/>
 
     </LinearLayout>
 

@@ -590,18 +590,6 @@
                 android:textSize="20dp"
                 android:textStyle="bold" />
 
-            <Button
-                android:id="@+id/servicebtn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/main"
-                android:layout_marginTop="110dp"
-                android:fontFamily="@font/caudex"
-                android:textStyle="bold"
-                android:textSize="15dp"
-                android:background="@drawable/cvboarder"
-                android:layout_marginLeft="280dp"
-                android:text="Total" />
 
             <TextView
                 android:id="@+id/textVie"

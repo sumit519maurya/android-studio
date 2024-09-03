@@ -20,10 +20,10 @@ class billingpage : AppCompatActivity() {
         val tvFinalTotal: TextView = findViewById(R.id.tvFinalTotal)
         val tvClothPrice: TextView = findViewById(R.id.tvClothPrice)
         val tvServiceCharge: TextView = findViewById(R.id.tvServiceCharge)
-        // val tvUserName: TextView =findViewById(R.id.tvUserName)
-        // val tvUserPhone: TextView =findViewById(R.id.tvUserPhone)
-        //  val tvOrderDate: TextView =findViewById(R.id.tvOrderDate)
-        //  val tvUserAddress: TextView =findViewById(R.id.tvUserAddress)
+        val tvUserName: TextView =findViewById(R.id.tvUserName)
+        val tvUserPhone: TextView =findViewById(R.id.tvUserPhone)
+        val tvOrderDate: TextView =findViewById(R.id.tvOrderDate)
+        val tvUserAddress: TextView =findViewById(R.id.tvUserAddress)
         //  val savebtn:Button=findViewById(R.id.save)
 
 
@@ -42,12 +42,20 @@ class billingpage : AppCompatActivity() {
         val laundryChecked = intent.getStringExtra("laundry")
         val dryChecked = intent.getStringExtra("dry")
         val ironChecked = intent.getStringExtra("iron")
+        val username = intent.getStringExtra("username")
+        val phoneno = intent.getStringExtra("phoneno")
+        val datetime = intent.getStringExtra("datetime")
+        val address = intent.getStringExtra("address")
 
 
         tvClothPrice.text = "₹" + totalCloth
         tvServiceCharge.text = "₹" + servicecharge
-        tvTotalCloths.text = totalcloths
+        tvTotalCloths.text = totalcloths +" "+ "Cloth"
         tvFinalTotal.text =  ftotal
+        tvUserName.text = username
+        tvOrderDate.text = datetime
+        tvUserPhone.text = phoneno
+        tvUserAddress.text = address
         val statusText = buildString {
             shirtChecked?.let {
                 append(it)

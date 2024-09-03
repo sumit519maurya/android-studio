@@ -60,6 +60,10 @@
                 android:textStyle="bold" />
 
             <EditText
+                android:id="@+id/usname"
+                android:textSize="20dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/caudex"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableStart="@drawable/baseline_account_circle_24"
@@ -79,10 +83,14 @@
                 android:textStyle="bold" />
 
             <EditText
+                android:id="@+id/phoneno"
+                android:textSize="20dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/caudex"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableStart="@drawable/baseline_call_24"
-                android:inputType="textPassword" />
+                android:inputType="phone|number" />
 
             <View
                 android:layout_width="wrap_content"
@@ -98,10 +106,16 @@
                 android:textStyle="bold" />
 
             <EditText
+                android:id="@+id/orderdate"
+                android:textSize="20dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/caudex"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableStart="@drawable/baseline_calendar_month_24"
-                android:inputType="textPassword" />
+                android:inputType="none"
+                android:focusable="false"
+                android:clickable="false"/>
 
             <View
                 android:layout_width="wrap_content"
@@ -119,10 +133,14 @@
                 android:textStyle="bold" />
 
             <EditText
+                android:id="@+id/address"
+                android:textSize="20dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/caudex"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableStart="@drawable/baseline_add_location_24"
-                android:inputType="textPassword" />
+                android:inputType="textPostalAddress" />
 
             <View
                 android:layout_width="wrap_content"
