@@ -1,5 +1,6 @@
 package com.example.washmart
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
@@ -20,6 +21,7 @@ class bookoption : AppCompatActivity() {
     private var count2=0
     private var count3=0
     private var count4=0
+    @SuppressLint("SuspiciousIndentation")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -63,40 +65,38 @@ class bookoption : AppCompatActivity() {
                 .putExtra("service_charge", servicetext.text.toString())
                 .putExtra("Total_cloth", totalcloth.text.toString())
                 .putExtra("ftotal", ftotaltext.text.toString())
-
-            // Add the text of the checkboxes only if they are checked
             if (shirt.isChecked) {
-                intent.putExtra("shirt", shirt.text.toString())
+                intent.putExtra("shirt", "Shirt")
             }
             if (tshirt.isChecked) {
-                intent.putExtra("tshirt", tshirt.text.toString())
+                intent.putExtra("tshirt", "Tshirt")
             }
             if (pants.isChecked) {
-                intent.putExtra("pants", pants.text.toString())
+                intent.putExtra("pants", "Pants")
             }
             if (shorts.isChecked) {
-                intent.putExtra("shorts", shorts.text.toString())
+                intent.putExtra("shorts", "Shorts")
             }
             if (cotton.isChecked) {
-                intent.putExtra("cotton", cotton.text.toString())
+                intent.putExtra("cotton", "Cotton")
             }
             if (wool.isChecked) {
-                intent.putExtra("wool", wool.text.toString())
+                intent.putExtra("wool", "Wool")
             }
             if (silk.isChecked) {
-                intent.putExtra("silk", silk.text.toString())
+                intent.putExtra("silk", "Silk")
             }
             if (nylon.isChecked) {
-                intent.putExtra("nylon", nylon.text.toString())
+                intent.putExtra("nylon", "Nylon")
             }
             if (laundry.isChecked) {
-                intent.putExtra("laundry", laundry.text.toString())
+                intent.putExtra("laundry", "Dry")
             }
             if (dry.isChecked) {
-                intent.putExtra("dry", dry.text.toString())
+                intent.putExtra("dry", "Dry Cleaning")
             }
             if (iron.isChecked) {
-                intent.putExtra("iron", iron.text.toString())
+                intent.putExtra("iron", "Iron")
             }
             startActivity(intent)
         }

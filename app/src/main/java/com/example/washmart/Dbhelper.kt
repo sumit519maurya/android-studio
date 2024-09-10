@@ -190,7 +190,7 @@ class Dbhelper (context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, nul
 
     fun saveBill(
         username: String,
-        userId: Long,
+        userid: Long,
         clothPrice: String?,
         serviceCharge: String?,
         totalCloths: String?,
@@ -239,7 +239,7 @@ class Dbhelper (context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, nul
 
         val contentValues = ContentValues().apply {
             put(COLUMN_USERNAMEb, username)
-            put(COLUMN_USER_ID, userId)
+            put(COLUMN_USER_ID, userid)
             put(COLUMN_CLOTH_PRICE, clothPrice)
             put(COLUMN_SERVICE_CHARGE, serviceCharge)
             put(COLUMN_TOTAL_CLOTHS, totalCloths)
@@ -250,8 +250,8 @@ class Dbhelper (context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, nul
             put(COLUMN_SELECTED_CLOTHS, selectedClothsString)  // Store selected cloths
             put(COLUMN_SELECTED_FABRIC, selectedFabricString)   // Store selected fabric
             put(COLUMN_SELECTED_SERVICE, selectedServiceString)
-            if (userId != null) {
-                put(COLUMN_USER_ID, userId)  // Only add if userId is not null
+            if (userid != null) {
+                put(COLUMN_USER_ID, userid)  // Only add if userId is not null
             }
         }
 
@@ -261,7 +261,7 @@ class Dbhelper (context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, nul
         return result != -1L
     }
     @SuppressLint("Range")
-    fun getBillsForUser(userId: Long): List<Bill> {
+    fun getBillsForUser(userid: Long): List<Bill> {
         val db = this.readableDatabase
        val bills = mutableListOf<Bill>()
 
@@ -281,7 +281,7 @@ class Dbhelper (context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, nul
 
         // Fetch bills based on user ID
         val query = "SELECT * FROM $TABLE_BILLS WHERE $COLUMN_USER_ID = ?"
-        val cursor: Cursor = db.rawQuery(query, arrayOf(userId.toString()))
+        val cursor: Cursor = db.rawQuery(query, arrayOf(userid.toString()))
 
         if (cursor.moveToFirst()) {
             do {
@@ -301,7 +301,7 @@ class Dbhelper (context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, nul
                 bills.add(bill)
             } while (cursor.moveToNext())
         } else {
-            Log.d("DbHelper", "No bills found for user ID: $userId")
+            Log.d("DbHelper", "No bills found for user ID: $userid")
         }
 
         cursor.close()

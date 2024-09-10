@@ -1,12 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
-    <solid android:color="@android:color/white" />
+    <!-- Define the gradient color for the shadow effect -->
+    <gradient
+        android:angle="90"
+    android:endColor="#B0B0B0"
+    android:startColor="#FFFFFF"
+    android:type="linear" />
+
+    <!-- Define the border stroke -->
     <stroke
         android:width="1dp"
         android:color="#000000" />
+
+    <!-- Define padding inside the shape -->
     <padding
         android:left="4dp"
         android:top="4dp"
         android:right="4dp"
         android:bottom="4dp" />
+
+    <!-- Define rounded corners -->
+    <corners
+        android:radius="16dp" />
 </shape>

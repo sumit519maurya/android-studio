@@ -30,7 +30,7 @@
         <androidx.cardview.widget.CardView
             android:id="@+id/cardView"
             android:layout_width="383dp"
-            android:layout_height="460dp"
+            android:layout_height="500dp"
             android:layout_marginTop="48dp"
             app:cardCornerRadius="30dp"
             app:cardElevation="20dp"
@@ -323,6 +323,18 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/totalclothes"
+                android:layout_width="90dp"
+                android:layout_height="45dp"
+                android:layout_marginLeft="150dp"
+                android:layout_marginTop="450dp"
+                android:gravity="center"
+                android:hint="Clothes"
+                android:textSize="20dp"
+                android:textColorHint="@color/black"
+                android:textStyle="bold" />
+
+            <TextView
                 android:id="@+id/toext"
                 android:layout_width="141dp"
                 android:layout_height="45dp"
@@ -331,6 +343,18 @@
                 android:gravity="center"
                 android:textColor="@color/main"
                 android:text="Clothes Price:-"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/toexts"
+                android:layout_width="141dp"
+                android:layout_height="45dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="450dp"
+                android:gravity="center"
+                android:textColor="@color/main"
+                android:text="Total Clothes:-"
                 android:textSize="20dp"
                 android:textStyle="bold" />
 
@@ -381,12 +405,16 @@
                 app:srcCompat="@drawable/shorts" />
 
 
+
+
+
+
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardView2"
             android:layout_width="383dp"
-            android:layout_height="145dp"
+            android:layout_height="105dp"
             android:layout_marginTop="24dp"
             app:cardElevation="20dp"
             app:cardBackgroundColor="@color/white"
@@ -458,29 +486,10 @@
                 android:textSize="17dp"
                 android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/totalclothes"
-                android:layout_width="101dp"
-                android:layout_height="38dp"
-                android:layout_marginLeft="150dp"
-                android:layout_marginTop="90dp"
-                android:gravity="center"
-                android:hint="Clothes"
-                android:textColorHint="@color/black"
-                android:textSize="20dp"
-                android:textStyle="bold" />
+            
 
-            <TextView
-                android:id="@+id/to"
-                android:layout_width="139dp"
-                android:layout_height="38dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="90dp"
-                android:gravity="center"
-                android:text="Total Clothes:-"
-                android:textColor="@color/main"
-                android:textSize="20dp"
-                android:textStyle="bold" />
+
+
 
 
         </androidx.cardview.widget.CardView>

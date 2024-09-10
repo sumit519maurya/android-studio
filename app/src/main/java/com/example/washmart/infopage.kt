@@ -35,9 +35,7 @@ class infopage : AppCompatActivity() {
         val servicecharge = intent.getStringExtra("service_charge")
         val totalcloths = intent.getStringExtra("Total_cloth")
         val ftotal = intent.getStringExtra("ftotal")
-        val shirtChecked = intent.getStringExtra("shirt")
         val tshirtChecked = intent.getStringExtra("tshirt")
-        val pantsChecked = intent.getStringExtra("pants")
         val shortsChecked = intent.getStringExtra("shorts")
         val cottonChecked = intent.getStringExtra("cotton")
         val woolChecked = intent.getStringExtra("wool")
@@ -46,7 +44,8 @@ class infopage : AppCompatActivity() {
         val laundryChecked = intent.getStringExtra("laundry")
         val dryChecked = intent.getStringExtra("dry")
         val ironChecked = intent.getStringExtra("iron")
-
+        val shirtt = intent.getStringExtra("shirt")
+        val pant = intent.getStringExtra("pants")
 
 
         usname.text = username
@@ -58,29 +57,50 @@ class infopage : AppCompatActivity() {
         orderdate.setText(formattedDateTime)
 
         save.setOnClickListener {
-
-            startActivity(
-                Intent(this,billingpage::class.java)
-                .putExtra("Cloth_price",totalCloth.toString())
-                .putExtra("service_charge",servicecharge.toString())
-                .putExtra("Total_cloth",totalcloths.toString())
-                .putExtra("ftotal",ftotal.toString())
-                .putExtra("shirt", shirtChecked)
-                .putExtra("tshirt", tshirtChecked)
-                .putExtra("pants", pantsChecked)
-                    .putExtra("shorts", shortsChecked)
-                    .putExtra("cotton", cottonChecked)
-                    .putExtra("wool", woolChecked)
-                    .putExtra("silk", silkChecked)
-                    .putExtra("nylon", nylonChecked)
-                    .putExtra("laundry", laundryChecked)
-                    .putExtra("dry", dryChecked)
-                    .putExtra("iron", ironChecked)
-                    .putExtra("username", usname.text.toString())
-                    .putExtra("phoneno", phoneno.text.toString())
-                    .putExtra("datetime", orderdate.text.toString())
-                    .putExtra("address", address.text.toString()))
-
+            val intent = Intent(this, billingpage::class.java).apply {
+                putExtra("Cloth_price", totalCloth)
+                putExtra("service_charge", servicecharge)
+                putExtra("Total_cloth", totalcloths)
+                putExtra("ftotal", ftotal)
+                if (shirtt!=null){
+               putExtra("shirt",shirtt)
+                }
+                if (pant!=null){
+                    putExtra("pants",pant)
+                }
+                if (tshirtChecked!=null){
+                    putExtra("tshirt",tshirtChecked)
+                }
+                if (shortsChecked!=null){
+                    putExtra("shorts",shortsChecked)
+                }
+                if (cottonChecked!=null){
+                    putExtra("cotton",cottonChecked)
+                }
+                if (woolChecked!=null){
+                    putExtra("wool",woolChecked)
+                }
+                if (silkChecked!=null){
+                    putExtra("silk",silkChecked)
+                }
+                if (nylonChecked!=null){
+                    putExtra("nylon",nylonChecked)
+                }
+                if (laundryChecked!=null){
+                    putExtra("laundry",laundryChecked)
+                }
+                if (dryChecked!=null){
+                    putExtra("dry",dryChecked)
+                }
+                if (ironChecked!=null){
+                    putExtra("iron",ironChecked)
+                }
+                putExtra("username", usname.text.toString())
+                putExtra("phoneno", phoneno.text.toString())
+                putExtra("datetime", orderdate.text.toString())
+                putExtra("address", address.text.toString())
+            }
+            startActivity(intent)
 
         }
 
