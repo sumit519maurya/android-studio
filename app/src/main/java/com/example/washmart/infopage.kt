@@ -1,10 +1,12 @@
 package com.example.washmart
 
+import android.animation.ObjectAnimator
 import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -24,6 +26,9 @@ class infopage : AppCompatActivity() {
         val phoneno:TextView=findViewById(R.id.phoneno)
         val orderdate:TextView=findViewById(R.id.orderdate)
         val address:TextView=findViewById(R.id.address)
+        val img:ImageView=findViewById(R.id.imageView5)
+
+        startFlipAnimation(img)
 
 
         val sharedPref = getSharedPreferences("UserProfile", Context.MODE_PRIVATE)
@@ -104,5 +109,16 @@ class infopage : AppCompatActivity() {
 
         }
 
+    }
+    private fun startFlipAnimation(view: ImageView) {
+        // Flip animation
+        val flipAnimator = ObjectAnimator.ofFloat(view, "rotationY", 0f, 360f).apply {
+            duration = 2000 // 1 second for full flip
+            repeatCount = ObjectAnimator.INFINITE // Repeat animation infinitely
+            repeatMode = ObjectAnimator.RESTART // Restart animation after each repetition
+        }
+
+        // Start the animation
+        flipAnimator.start()
     }
 }

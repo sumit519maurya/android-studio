@@ -1,5 +1,6 @@
 package com.example.washmart
 
+import android.animation.ObjectAnimator
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
@@ -8,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
@@ -27,6 +29,9 @@ class login : Fragment() {
         val passlg:EditText=view.findViewById(R.id.passlg)
         val namelg:EditText=view.findViewById(R.id.namelg)
         val admin:TextView=view.findViewById(R.id.admin)
+        val logo:ImageView=view.findViewById(R.id.logo)
+
+        startFlipAnimation(logo)
 
         signup.setOnClickListener {
             val i=Intent(requireContext(),signin::class.java)
@@ -60,6 +65,17 @@ class login : Fragment() {
             startActivity(i)
         }
         return view
+    }
+    private fun startFlipAnimation(view: ImageView) {
+        // Flip animation
+        val flipAnimator = ObjectAnimator.ofFloat(view, "rotationY", 0f, 360f).apply {
+            duration = 2000 // 1 second for full flip
+            repeatCount = ObjectAnimator.INFINITE // Repeat animation infinitely
+            repeatMode = ObjectAnimator.RESTART // Restart animation after each repetition
+        }
+
+        // Start the animation
+        flipAnimator.start()
     }
 
 }

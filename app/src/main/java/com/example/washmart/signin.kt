@@ -1,9 +1,11 @@
 package com.example.washmart
 
+import android.animation.ObjectAnimator
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -12,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity
 class signin : AppCompatActivity() {
 
     private lateinit var dbHelper: Dbhelper
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,6 +28,10 @@ class signin : AppCompatActivity() {
         val emailsi =findViewById<TextView>(R.id.emailsi)
         val phonesi =findViewById<TextView>(R.id.phonesi)
         val passsi =findViewById<TextView>(R.id.passsi)
+        val logo = findViewById<ImageView>(R.id.logo)
+
+
+        startFlipAnimation(logo)
 
 
         signinbtn.setOnClickListener {
@@ -60,5 +67,16 @@ class signin : AppCompatActivity() {
             val i=Intent(this,login::class.java)
             startActivity(i)
         }
+    }
+    private fun startFlipAnimation(view: ImageView) {
+        // Flip animation
+        val flipAnimator = ObjectAnimator.ofFloat(view, "rotationY", 0f, 360f).apply {
+            duration = 2000 // 1 second for full flip
+            repeatCount = ObjectAnimator.INFINITE // Repeat animation infinitely
+            repeatMode = ObjectAnimator.RESTART // Restart animation after each repetition
+        }
+
+        // Start the animation
+        flipAnimator.start()
     }
 }
