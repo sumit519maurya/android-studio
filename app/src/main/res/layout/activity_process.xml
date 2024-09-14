@@ -1,0 +1,152 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="32dp"
+    android:background="#f5f5f5">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="32dp">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="120dp"
+                android:id="@+id/logo"
+                android:layout_height="120dp"
+                android:src="@drawable/logo2"
+                app:civ_border_color="#178DF5"
+                android:elevation="4dp"
+                app:civ_border_width="2dp"
+                app:civ_border_overlay="true"
+                android:contentDescription="WashMart Logo"
+                android:layout_marginEnd="20dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="WashMart"
+                android:textSize="38sp"
+                android:textStyle="bold"
+                android:textColor="#333333"/>
+        </LinearLayout>
+
+       >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pick-up"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:textColor="@color/main"
+            android:layout_marginBottom="8dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="24dp"
+            android:background="@drawable/roundbackground"
+            android:layout_marginBottom="24dp">
+
+            <ImageView
+                android:id="@+id/img1"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/img5"
+                android:layout_marginTop="35dp"
+                android:contentDescription="Delivery Boy Icon"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="24dp"
+                android:text="1. Once you place an order, our delivery team will pick up your clothes from your home."
+                android:textColor="#333333"
+                android:textSize="22sp"/>
+        </LinearLayout>
+
+        <!-- Step 2: Delivery -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Delivery"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:textColor="@color/main"
+            android:layout_marginBottom="8dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="24dp"
+            android:background="@drawable/roundbackground"
+            android:layout_marginBottom="24dp">
+
+            <ImageView
+                android:id="@+id/img2"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/img5"
+                android:layout_marginTop="32dp"
+                android:contentDescription="Washing Machine Icon"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="24dp"
+                android:text="2. Your clothes will be washed and delivered back the next day or within 24 hours."
+                android:textColor="#333333"
+                android:textSize="22sp"/>
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Payment"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:textColor="@color/main"
+            android:layout_marginBottom="8dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="24dp"
+            android:background="@drawable/roundbackground"
+            android:layout_marginBottom="24dp">
+
+            <ImageView
+                android:id="@+id/img3"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/img5"
+                android:layout_marginTop="32dp"
+                android:contentDescription="Cash on Delivery Icon"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="24dp"
+                android:text="3. Payment is collected upon delivery as the app supports cash on delivery only."
+                android:textColor="#333333"
+                android:textSize="22sp"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

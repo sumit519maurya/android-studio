@@ -1,11 +1,15 @@
 package com.example.washmart
 
+import android.animation.ObjectAnimator
 import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import android.widget.EditText
+import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import java.text.SimpleDateFormat
@@ -23,7 +27,10 @@ class infopage : AppCompatActivity() {
         val usname:TextView=findViewById(R.id.usname)
         val phoneno:TextView=findViewById(R.id.phoneno)
         val orderdate:TextView=findViewById(R.id.orderdate)
-        val address:TextView=findViewById(R.id.address)
+        val address = findViewById<EditText>(R.id.address)
+        val img:ImageView=findViewById(R.id.imageView5)
+
+        startFlipAnimation(img)
 
 
         val sharedPref = getSharedPreferences("UserProfile", Context.MODE_PRIVATE)
@@ -57,6 +64,10 @@ class infopage : AppCompatActivity() {
         orderdate.setText(formattedDateTime)
 
         save.setOnClickListener {
+
+            if (validateAddress(address)) {
+                // Address is valid, proceed with the next action
+
             val intent = Intent(this, billingpage::class.java).apply {
                 putExtra("Cloth_price", totalCloth)
                 putExtra("service_charge", servicecharge)
@@ -101,8 +112,37 @@ class infopage : AppCompatActivity() {
                 putExtra("address", address.text.toString())
             }
             startActivity(intent)
+            } else {
+                Toast.makeText(this, "Please enter a valid address", Toast.LENGTH_SHORT).show()
+            }
 
         }
 
+    }
+    private fun startFlipAnimation(view: ImageView) {
+        // Flip animation
+        val flipAnimator = ObjectAnimator.ofFloat(view, "rotationY", 0f, 360f).apply {
+            duration = 2000 // 1 second for full flip
+            repeatCount = ObjectAnimator.INFINITE // Repeat animation infinitely
+            repeatMode = ObjectAnimator.RESTART // Restart animation after each repetition
+        }
+
+        // Start the animation
+        flipAnimator.start()
+    }
+    fun validateAddress(address: EditText): Boolean {
+        val adddress = address.text.toString().trim()
+
+        if (adddress.isEmpty()) {
+            address.error = "Address is required"
+            return false
+        }
+
+        if (adddress.length < 10) {
+            address .error = "Address is too short"
+            return false
+        }
+
+        return true
     }
 }
