@@ -1,11 +1,11 @@
 package com.example.washmart
 
 import android.animation.ObjectAnimator
+import android.annotation.SuppressLint
 import android.app.AlertDialog
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.text.InputType
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -82,20 +82,63 @@ class login : Fragment() {
         val builder = AlertDialog.Builder(requireContext())
         builder.setTitle("Admin Access")
 
-        val dialogView = LayoutInflater.from(requireContext()).inflate(R.layout.dialog_password, null)
+        // Inflate the dialog view with username and password inputs
+        val dialogView = LayoutInflater.from(requireContext()).inflate(R.layout.dialog_passwor, null)
+        val usernameInput = dialogView.findViewById<EditText>(R.id.username_input)
         val passwordInput = dialogView.findViewById<EditText>(R.id.password_input)
 
         builder.setView(dialogView)
 
-        builder.setPositiveButton("Submit") { dialog, which ->
+        // Option to login as an existing admin
+        builder.setPositiveButton("Login") { dialog, which ->
+            val enteredUsername = usernameInput.text.toString()
             val enteredPassword = passwordInput.text.toString()
-            if (enteredPassword == FIXED_PASSWORD) {
+
+            // Check if the entered credentials match an admin in the database
+            val dbHelper = Dbhelper(requireContext())
+            if (dbHelper.isAdminValid(enteredUsername, enteredPassword)) {
+                // Credentials are valid, go to the admin page
                 val intent = Intent(requireContext(), adminpage::class.java)
                 startActivity(intent)
             } else {
-                Toast.makeText(requireContext(), "Incorrect password", Toast.LENGTH_SHORT).show()
+                // Show a toast if the credentials are incorrect
+                Toast.makeText(requireContext(), "Incorrect username or password", Toast.LENGTH_SHORT).show()
             }
         }
+
+        // Option to add a new admin
+        builder.setNeutralButton("New Admin") { dialog, which ->
+            showDefaultPasswordDialog()
+        }
+
+        builder.setNegativeButton("Cancel") { dialog, which ->
+            dialog.cancel()
+        }
+
+        builder.show()
+    }
+    private fun showDefaultPasswordDialog() {
+        val builder = AlertDialog.Builder(requireContext())
+        builder.setTitle("Enter Default Admin Password")
+
+        // Inflate a dialog view with only the default admin password input
+        val dialogView = LayoutInflater.from(requireContext()).inflate(R.layout.dialog_default_password, null)
+        val defaultPasswordInput = dialogView.findViewById<EditText>(R.id.default_password_input)
+
+        builder.setView(dialogView)
+
+        builder.setPositiveButton("Submit") { dialog, which ->
+            val enteredDefaultPassword = defaultPasswordInput.text.toString()
+
+            val DEFAULT_ADMIN_PASSWORD = "sumit"
+            if (enteredDefaultPassword == DEFAULT_ADMIN_PASSWORD) {
+                // Show dialog to create a new admin
+                showCreateNewAdminDialog()
+            } else {
+                Toast.makeText(requireContext(), "Incorrect default admin password", Toast.LENGTH_SHORT).show()
+            }
+        }
+
         builder.setNegativeButton("Cancel") { dialog, which ->
             dialog.cancel()
         }
@@ -103,4 +146,42 @@ class login : Fragment() {
         builder.show()
     }
 
+    @SuppressLint("MissingInflatedId")
+    private fun showCreateNewAdminDialog() {
+        val builder = AlertDialog.Builder(requireContext())
+        builder.setTitle("Create New Admin")
+
+        // Inflate a dialog view with inputs for new admin username and password
+        val dialogView = LayoutInflater.from(requireContext()).inflate(R.layout.dialog_create_admin, null)
+        val newAdminUsernameInput = dialogView.findViewById<EditText>(R.id.new_admin_username_input)
+        val newAdminPasswordInput = dialogView.findViewById<EditText>(R.id.new_admin_password_input)
+
+        builder.setView(dialogView)
+
+        builder.setPositiveButton("Create Admin") { dialog, which ->
+            val newAdminUsername = newAdminUsernameInput.text.toString()
+            val newAdminPassword = newAdminPasswordInput.text.toString()
+
+            // Add the new admin to the database
+            val dbHelper = Dbhelper(requireContext())
+            val isAdded = dbHelper.addNewAdmin(newAdminUsername, newAdminPassword)
+
+            if (isAdded) {
+                Toast.makeText(requireContext(), "New admin added successfully!", Toast.LENGTH_SHORT).show()
+            } else {
+                Toast.makeText(requireContext(), "Failed to add new admin. Try again.", Toast.LENGTH_SHORT).show()
+            }
+        }
+
+        builder.setNegativeButton("Cancel") { dialog, which ->
+            dialog.cancel()
+        }
+
+        builder.show()
+    }
+
+
+
 }
+
+

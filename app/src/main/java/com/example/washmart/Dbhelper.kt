@@ -29,30 +29,12 @@ val userPhone: String?,       // Add user phone
 val userAddress: String?      // Add user address
 )
 
-/*data class Bill1(
-    val shirt: String?,
-    val tshirt: String?,
-    val pants: String?,
-    val shorts: String?,
-    val cotton: String?,
-    val wool: String?,
-    val silk: String?,
-    val nylon: String?,
-    val laundry: String?,
-    val dry: String?,
-    val iron: String?,
-    val finalTotal: String?,
-    val totalCloths: String?,
-    val clothPrice: String?,
-    val orderDate: String?,
-    val serviceCharge: String?,
-    val username: String?
-)*/
 class Dbhelper (context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
 
     companion object {
         private const val DATABASE_NAME = "washmart.db"
         private const val DATABASE_VERSION = 2
+
 
         private const val TABLE_USERS = "Users"
         private const val COLUMN_USER_ID = "user_id"
@@ -74,6 +56,11 @@ class Dbhelper (context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, nul
         private const val COLUMN_SELECTED_SERVICE = "selected_service"
         private const val COLUMN_PHONENO = "userPhone"
         private const val COLUMN_ADDRESS = "Address"
+
+        private const val TABLE_ADMINS = "Admins"
+        private const val COLUMN_ADMIN_ID = "id"
+        private const val COLUMN_ADMIN_USERNAME = "username"
+        private const val COLUMN_ADMIN_PASSWORD = "password"
 
     }
 
@@ -102,13 +89,21 @@ class Dbhelper (context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, nul
                 + "$COLUMN_USER_ID INTEGER, "
                 + "FOREIGN KEY ($COLUMN_USER_ID) REFERENCES $TABLE_USERS($COLUMN_USER_ID))"
                 )
+
+        val createAdminsTable = ("CREATE TABLE $TABLE_ADMINS ("
+                + "$COLUMN_ADMIN_ID INTEGER PRIMARY KEY AUTOINCREMENT, "
+                + "$COLUMN_ADMIN_USERNAME TEXT NOT NULL, "
+                + "$COLUMN_ADMIN_PASSWORD TEXT NOT NULL)")
+
         db.execSQL(createTable)
         db.execSQL(createBillTable)
+        db.execSQL(createAdminsTable)
     }
 
     override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
         db.execSQL("DROP TABLE IF EXISTS $TABLE_USERS")
         db.execSQL("DROP TABLE IF EXISTS $TABLE_BILLS")
+        db.execSQL("DROP TABLE IF EXISTS $TABLE_ADMINS")
         onCreate(db)
     }
 
@@ -307,6 +302,56 @@ class Dbhelper (context: Context) : SQLiteOpenHelper(context, DATABASE_NAME, nul
         cursor.close()
         db.close()
         return bills
+    }
+    // Insert an admin into the Admins table
+  /*  fun addAdmin(username: String, password: String): Long {
+        val db = this.writableDatabase
+        val values = ContentValues().apply {
+            put(COLUMN_ADMIN_USERNAME, username)
+            put(COLUMN_ADMIN_PASSWORD, password)
+        }
+
+        val result = db.insert(TABLE_ADMINS, null, values)
+        db.close()
+        return result
+    }*/
+
+    fun isAdminValid(username: String, password: String): Boolean {
+        val db = this.readableDatabase
+        val query = "SELECT * FROM $TABLE_ADMINS WHERE $COLUMN_ADMIN_USERNAME = ? AND $COLUMN_ADMIN_PASSWORD = ?"
+        val cursor: Cursor = db.rawQuery(query, arrayOf(username, password))
+
+        // Check if the cursor has any results
+        val isValid = cursor.count > 0
+        cursor.close()
+        db.close()
+
+        return isValid
+    }
+
+    /*fun updateAdminPassword(username: String, newPassword: String): Int {
+        val db = this.writableDatabase
+        val values = ContentValues().apply {
+            put(COLUMN_ADMIN_PASSWORD, newPassword)
+        }
+
+        val result = db.update(TABLE_ADMINS, values, "$COLUMN_ADMIN_USERNAME = ?", arrayOf(username))
+        db.close()
+        return result
+    }*/
+
+    fun addNewAdmin(username: String, password: String): Boolean {
+        val db = this.writableDatabase
+        val values = ContentValues().apply {
+            put("username", username)
+            put("password", password)
+        }
+
+        val result = db.insert("Admins", null, values)
+        db.close()
+
+        // If the result is -1, it means the insertion failed
+        return result != -1L
     }
 
 }
